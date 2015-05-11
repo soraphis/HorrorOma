@@ -1,3 +1,2 @@
-
-
 Standard Assets		https://kharma.unity3d.com/en/#!/content/32351
+	alles bis auf 'Sample Scenes'
