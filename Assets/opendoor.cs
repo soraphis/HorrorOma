@@ -16,8 +16,7 @@ public class opendoor : MonoBehaviour {
 			RaycastHit hit = new RaycastHit(); 
 			Vector3 fwd = transform.forward;
 			Debug.DrawRay(transform.position, fwd);
-			if( Physics.Raycast(new Ray(this.transform.position, fwd), out hit, 2.0f) && hit.collider.CompareTag("Door") ){
-				Debug.Log("door");
+			if( Physics.Raycast(new Ray(this.transform.position, fwd), out hit, 2.5f) && hit.collider.CompareTag("Door") ){
 				Transform door = hit.collider.transform;
 				Animator anim = door.GetComponent<Animator>();
 				anim.SetTrigger("triggerdoor");
