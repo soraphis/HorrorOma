@@ -1,0 +1,27 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class opendoor : MonoBehaviour {
+
+
+
+	// Use this for initialization
+	void Start () {
+
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if (Input.GetKeyDown (KeyCode.F)) {
+			RaycastHit hit = new RaycastHit(); 
+			Vector3 fwd = transform.forward;
+			Debug.DrawRay(transform.position, fwd);
+			if( Physics.Raycast(new Ray(this.transform.position, fwd), out hit, 2.0f) && hit.collider.CompareTag("Door") ){
+				Debug.Log("door");
+				Transform door = hit.collider.transform;
+				Animator anim = door.GetComponent<Animator>();
+				anim.SetTrigger("triggerdoor");
+			}
+		}
+	}
+}
