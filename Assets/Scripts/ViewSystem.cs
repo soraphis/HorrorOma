@@ -18,7 +18,8 @@ namespace Assets.Scripts
         void Update()
         {
             RaycastHit hit;
-            if (!Physics.Raycast(new Ray(_playerCameraTransform.position, _playerCameraTransform.forward), out hit)) return;
+			Debug.DrawRay (_playerCameraTransform.position, _playerCameraTransform.forward * 3);
+			if (!Physics.Raycast(new Ray(_playerCameraTransform.position, _playerCameraTransform.forward), out hit)) return;
 
             var scripts = hit.collider.gameObject.GetComponents<MonoBehaviour>();
             foreach (var clickable in scripts.OfType<IViewOver>())
