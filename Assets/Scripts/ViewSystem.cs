@@ -10,7 +10,7 @@ namespace Assets.Scripts
     {
         private Transform _playerCameraTransform;
 
-        void OnEnable()
+        void Start()
         {
             _playerCameraTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
         }
