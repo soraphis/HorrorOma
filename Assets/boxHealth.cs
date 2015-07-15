@@ -3,23 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class boxHealth : MonoBehaviour {
-	public float startHealth = 100;
-	private float health = 100;
-	public Text healthText;
-
+	public float health = 100;
 	private bool damageable = true;
 	private bool isDead = false;
-	// Use this for initialization
-	void Start(){
-	
-		health = startHealth;
-
-	}
-
-	void Update () {
-		// FIXME: remove debug text
-		//healthText.text = health+" / "+ startHealth;
-	}
 	
 	void ApplyDamage(float damage){
 		if (damageable) {

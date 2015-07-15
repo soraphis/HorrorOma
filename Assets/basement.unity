@@ -3583,7 +3583,7 @@ GameObject:
   - 54: {fileID: 988126202}
   m_Layer: 0
   m_Name: BoxOnGround
-  m_TagString: Untagged
+  m_TagString: Kiste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5410,7 +5410,7 @@ GameObject:
   - 23: {fileID: 1413304644}
   m_Layer: 0
   m_Name: BoxInHand
-  m_TagString: Untagged
+  m_TagString: Kiste
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5465,7 +5465,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1413304642}
   m_LocalRotation: {x: 0, y: .707106709, z: 0, w: .707106948}
-  m_LocalPosition: {x: .129999995, y: -.569999993, z: .939999998}
+  m_LocalPosition: {x: .209999993, y: -.00999999978, z: 1.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 560876971}
