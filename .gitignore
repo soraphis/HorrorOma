@@ -5,11 +5,10 @@
 
 # imported asset store assets
 [Aa]ssets/Standard\ Assets
-[Aa]ssets/Standard\ Assets.meta
 [Aa]ssets/ProCore
-[Aa]ssets/ProCore.meta
 [Aa]ssets/Editor
-[Aa]ssets/Editor.meta
+[Aa]ssets/GameAssets
+[Aa]ssets/DecalSystem
 
 # unity project files
 ProjectSettings/ProjectVersion.txt
