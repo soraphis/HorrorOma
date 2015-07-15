@@ -11,9 +11,7 @@
 [Aa]ssets/DecalSystem
 
 # Visual Studio Plugins
-Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll
-Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll
-Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll
+Assets/UnityVS/*
 
 # unity project files
 ProjectSettings/ProjectVersion.txt
