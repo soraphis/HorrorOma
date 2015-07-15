@@ -2,3 +2,5 @@ Standard Assets		https://kharma.unity3d.com/en/#!/content/32351
 	alles bis auf 'Sample Scenes'
 
 Prototype			https://www.assetstore.unity3d.com/en/#!/content/11919
+
+simple decal system: https://www.assetstore.unity3d.com/en/#!/content/13889
