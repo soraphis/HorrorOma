@@ -12,6 +12,7 @@
 
 # Visual Studio Plugins
 Assets/UnityVS/*
+Assets/UnityVS.meta
 
 # unity project files
 ProjectSettings/ProjectVersion.txt
