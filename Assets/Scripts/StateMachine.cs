@@ -14,17 +14,19 @@ public class StateMachine {
 	private GameState _state;
 
 	public delegate void StateChangedHandler(GameState oldState, GameState newState);
-	public event StateChangedHandler onStateChanged;
+	public event StateChangedHandler OnStateChanged;
 
-	public GameState state{
+	public GameState State{
 		get{ return _state; }
-		set{ 
-			onStateChanged(_state, value);
+		set{
+            if (OnStateChanged != null) { 
+			    OnStateChanged(_state, value);
+            }
 			_state = value;
 		}
 	}
 
-	public static StateMachine instance{
+	public static StateMachine Instance{
 		get{
 			if(_instance == null)
 				StateMachine._instance = new StateMachine();
