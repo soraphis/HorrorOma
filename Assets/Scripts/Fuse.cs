@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 public class Fuse : MonoBehaviour {
@@ -34,5 +35,15 @@ public class Fuse : MonoBehaviour {
 
 		toggleItems ();
 	}
+
+
+#if UNITY_EDITOR
+	void OnDrawGizmos(){
+		Gizmos.color = Color.cyan;
+		foreach (var l in Lights) {
+			Gizmos.DrawLine (this.transform.position, l.transform.position);               
+		}
+	}
+#endif
 
 }

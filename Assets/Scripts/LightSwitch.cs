@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 
 namespace Assets.Scripts
 {
@@ -22,6 +23,15 @@ namespace Assets.Scripts
 		// contains all lamps which may have multiple lightobjects
 		public Fuse[] fuses = null;
 
+
+		#if UNITY_EDITOR
+		void OnDrawGizmos(){
+			Gizmos.color = Color.yellow;
+			foreach (var l in fuses)
+				//Handles.DrawLine (this.transform.position, l.transform.position);
+				Gizmos.DrawLine (this.transform.position, l.transform.position);
+		}
+		#endif
 
 
     }
