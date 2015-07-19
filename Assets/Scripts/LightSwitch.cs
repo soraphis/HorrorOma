@@ -4,19 +4,25 @@ namespace Assets.Scripts
 {
     internal class LightSwitch : MonoBehaviour, IViewOver
     {
-        public GameObject[] Lights;
+		#region IViewOver implementation
 
-        public void OnViewOver(float distance)
-        {
-            if (!Input.GetButtonDown("Fire1")) return;
+		public void fireSelect ()
+		{
+		}
 
-            foreach (var myGameObject in Lights)
-            {
-                foreach (var myLight in myGameObject.GetComponentsInChildren<Light>(true))
-                {
-                    myLight.enabled = !myLight.enabled;
-                }
-            }
-        }
+		public void fireAction ()
+		{
+			foreach (Fuse fuse in fuses) {
+				fuse.powered = !fuse.powered;
+			}
+		}
+
+		#endregion
+
+		// contains all lamps which may have multiple lightobjects
+		public Fuse[] fuses = null;
+
+
+
     }
 }

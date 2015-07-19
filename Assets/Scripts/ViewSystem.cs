@@ -8,15 +8,16 @@ namespace Assets.Scripts
     /// </summary>
     class ViewSystem : MonoBehaviour
     {
-        private Transform _playerCameraTransform;
+        // private Transform _playerCameraTransform;
 
         void Start()
         {
-            _playerCameraTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
+           // _playerCameraTransform = GameObject.FindGameObjectWithTag("MainCamera").transform;
         }
 
         void Update()
         {
+			/*
             RaycastHit hit;
 			Debug.DrawRay (_playerCameraTransform.position, _playerCameraTransform.forward * 3);
 			if (!Physics.Raycast(new Ray(_playerCameraTransform.position, _playerCameraTransform.forward), out hit)) return;
@@ -26,6 +27,7 @@ namespace Assets.Scripts
             {
                 clickable.OnViewOver(hit.distance);
             }
+            */
         }
     }
 }
