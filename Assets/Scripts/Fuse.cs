@@ -27,7 +27,25 @@ public class Fuse : MonoBehaviour {
 			foreach (var myLight in myGameObject.GetComponentsInChildren<Light>(true))
 			{
 				myLight.enabled = _powered;
+
 			}
+			foreach(LightFlicker flicker in myGameObject.GetComponentsInChildren<LightFlicker>(true)){
+				flicker.enabled = _powered;
+			}
+
+			Transform birne = myGameObject.transform.FindChild("birne");
+			if(birne == null) continue;
+			Renderer rend = birne.GetComponent<Renderer>();
+
+			if(_powered){
+				//DynamicGI.SetEmissive(rend, Color.red * 0.8f);
+				rend.material.SetColor("_EmissionColor", Color.white*0.8f);
+				//
+			}else{
+				//DynamicGI.SetEmissive(rend, Color.green * 0f);
+				rend.material.SetColor("_EmissionColor", Color.white*0f);
+			}
+			DynamicGI.UpdateMaterials(rend);
 		}
 	}
 

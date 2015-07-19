@@ -11,12 +11,12 @@ GameObject:
   - 33: {fileID: 3315068}
   - 23: {fileID: 2389366}
   - 114: {fileID: 11483730}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Decal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &458952
 Transform:

@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &133290
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,13 +42,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 490672}
   - 108: {fileID: 10882352}
+  - 114: {fileID: 11449170}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &179060
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133662}
   m_LocalRotation: {x: -.70710659, y: 8.15595413e-08, z: -3.42762063e-09, w: .707107067}
-  m_LocalPosition: {x: .0399999991, y: -.381999999, z: .209999993}
+  m_LocalPosition: {x: .0399999991, y: -.600000024, z: .209999993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 496632}
@@ -248,16 +249,16 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8
-  m_Range: 3.85837603
+  m_Color: {r: .25, g: .24938044, b: .229779407, a: 1}
+  m_Intensity: 3.3900001
+  m_Range: 3.92000008
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_Strength: 1
-    m_Bias: .0500000007
+    m_Bias: 0
     m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
   m_DrawHalo: 1
@@ -267,10 +268,22 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 4
-  m_BounceIntensity: 0
+  m_BounceIntensity: 2.36999989
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11449170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2271d7be851084ab114b42dada7235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doesFlicker: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
