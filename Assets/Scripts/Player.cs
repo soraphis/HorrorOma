@@ -31,7 +31,11 @@ public class Player : MonoBehaviour {
 
 
 	void Start(){
+
 		Player.instance = this;
+
+		Cursor.lockState = CursorLockMode.Locked;
+
 		if (BOX.worldObject.activeSelf) {
 			BOX.handsObject.SetActive(false);
 		}

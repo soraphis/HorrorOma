@@ -78,7 +78,7 @@ MonoBehaviour:
   pushDistance: .00999999978
   affectedLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
