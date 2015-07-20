@@ -27,6 +27,7 @@ GameObject:
   - 23: {fileID: 2307206}
   - 65: {fileID: 6517210}
   - 114: {fileID: 11422228}
+  - 82: {fileID: 8278714}
   m_Layer: 0
   m_Name: Tuer
   m_TagString: Untagged
@@ -102,6 +103,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .20000267, y: 3.19999862, z: 5.79999781}
   m_Center: {x: -2.98023224e-08, y: 1.1920929e-07, z: -4.76837158e-07}
+--- !u!82 &8278714
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176582}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8c1a0624acde87d48b49cf76d104c9b3, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11422228
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,6 +183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d2232d3c6ee544b9c4554003bdec5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  locked: 0
+  dooropen: {fileID: 8300000, guid: 8c1a0624acde87d48b49cf76d104c9b3, type: 3}
+  doorclose: {fileID: 8300000, guid: cefcb37229add81499338f75b6bb73f3, type: 3}
+  doorlocked: {fileID: 8300000, guid: 5d91f96209e432f4b95f7bbe75ae0a24, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
