@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System.Collections;
 
 public class Fuse : MonoBehaviour {
@@ -19,6 +21,7 @@ public class Fuse : MonoBehaviour {
 
 
 	public GameObject[] Lights = null;
+
 
 	private void toggleItems(){
 		foreach (var myGameObject in Lights)
@@ -56,7 +59,7 @@ public class Fuse : MonoBehaviour {
 
 
 #if UNITY_EDITOR
-	void OnDrawGizmos(){
+	void OnDrawGizmosSelected(){
 		Gizmos.color = Color.cyan;
 		foreach (var l in Lights) {
 			Gizmos.DrawLine (this.transform.position, l.transform.position);               

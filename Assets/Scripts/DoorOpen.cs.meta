@@ -1,10 +1,13 @@
 fileFormatVersion: 2
 guid: 41d2232d3c6ee544b9c4554003bdec5a
-timeCreated: 1436971272
+timeCreated: 1437381615
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dooropen: {fileID: 8300000, guid: 8c1a0624acde87d48b49cf76d104c9b3, type: 3}
+  - doorclose: {fileID: 8300000, guid: cefcb37229add81499338f75b6bb73f3, type: 3}
+  - doorlocked: {fileID: 8300000, guid: 5d91f96209e432f4b95f7bbe75ae0a24, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
