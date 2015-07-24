@@ -124,5 +124,5 @@
          }
      }
      
-     Fallback "Standard"
+     Fallback "Diffuse"
  }
