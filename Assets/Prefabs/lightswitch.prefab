@@ -101,8 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineShader: {fileID: 4800000, guid: d2ff2411abd05894292164df8fffe45f, type: 3}
   defaultShader: {fileID: 0}
-  outlineSize: .00999999978
-  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineSize: .000500000024
+  outlineColor: {r: 1, g: .666670024, b: 0, a: 1}
   Player: {fileID: 0}
   highlighted: 0
 --- !u!1001 &100100000

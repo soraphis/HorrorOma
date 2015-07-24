@@ -3,11 +3,13 @@ using System.Collections;
 using Assets.Scripts;
 
 public class Highlighter : MonoBehaviour {
-	
+
+	private static Color orange = new Color(1, 0.66667f, 0);
+
 	public Shader outlineShader;
 	public Shader defaultShader;
-	public float outlineSize = 0.01f;
-	public Color outlineColor = Color.red;
+	public float outlineSize = 0.0025f;
+	public Color outlineColor = Highlighter.orange;
 	public GameObject Player;
 
 	private Renderer rend;

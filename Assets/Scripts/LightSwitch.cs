@@ -15,7 +15,6 @@ namespace Assets.Scripts
 
 		public void fireAction ()
 		{
-			Debug.Log ("test");
 			foreach (Fuse fuse in fuses) {
 				fuse.powered = !fuse.powered;
 			}

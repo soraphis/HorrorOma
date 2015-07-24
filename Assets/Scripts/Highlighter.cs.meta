@@ -1,12 +1,13 @@
 fileFormatVersion: 2
 guid: 6f90bf0cd93b32548ab43e0bf07cddaa
-timeCreated: 1437039903
+timeCreated: 1437726619
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - outlineShader: {fileID: 4800000, guid: d2ff2411abd05894292164df8fffe45f, type: 3}
   - defaultShader: {instanceID: 0}
+  - Player: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -28,6 +28,7 @@ GameObject:
   - 65: {fileID: 6517210}
   - 114: {fileID: 11422228}
   - 82: {fileID: 8278714}
+  - 114: {fileID: 11449910}
   m_Layer: 0
   m_Name: Tuer
   m_TagString: Untagged
@@ -187,6 +188,23 @@ MonoBehaviour:
   dooropen: {fileID: 8300000, guid: 8c1a0624acde87d48b49cf76d104c9b3, type: 3}
   doorclose: {fileID: 8300000, guid: cefcb37229add81499338f75b6bb73f3, type: 3}
   doorlocked: {fileID: 8300000, guid: 5d91f96209e432f4b95f7bbe75ae0a24, type: 3}
+--- !u!114 &11449910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f90bf0cd93b32548ab43e0bf07cddaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineShader: {fileID: 4800000, guid: d2ff2411abd05894292164df8fffe45f, type: 3}
+  defaultShader: {fileID: 0}
+  outlineSize: .00249999994
+  outlineColor: {r: 1, g: .666670024, b: 0, a: 1}
+  Player: {fileID: 0}
+  highlighted: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
