@@ -20,9 +20,7 @@ namespace Assets.Scripts
                 if (!Trigger.IsBoxWithinCollider) return;
 
                 var kiste = GameObject.FindWithTag("Kiste");
-                Assert.IsNotNull(kiste);
                 var kisteTransform = kiste.GetComponent<Transform>();
-                Assert.IsNotNull(kisteTransform);
                 kisteTransform.localPosition = new Vector3(18.417f, 1.255f, -7.81f);
 
                 StateMachine.Instance.State = GameState.FindBoxAgain02;
