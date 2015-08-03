@@ -2,6 +2,7 @@
 using System.Collections;
 using Assets.Scripts;
 
+
 public class Highlighter : MonoBehaviour {
 
 	private static Color orange = new Color(1, 0.66667f, 0);

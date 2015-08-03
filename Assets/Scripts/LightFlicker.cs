@@ -60,7 +60,7 @@ public class LightFlicker : MonoBehaviour {
 
 		this.mylight.enabled = false;
 		rend.material.SetColor("_EmissionColor", Color.white*0f);
-		for(int i = 0; i < Random.Range(5, 8); ++i){
+		for(int i = 0; i < Random.Range(8, 14); ++i){
 			this.mylight.enabled = !this.mylight.enabled;
 
 			if(this.mylight.enabled){
@@ -68,7 +68,7 @@ public class LightFlicker : MonoBehaviour {
 			}else{
 				rend.material.SetColor("_EmissionColor", Color.white*0f);
 			}
-			yield return new WaitForSeconds(Random.Range(0.01f, 0.1f));
+			yield return new WaitForSeconds(Random.Range(0.03f, 0.1f));
 		}
 
 		this.mylight.enabled = false;

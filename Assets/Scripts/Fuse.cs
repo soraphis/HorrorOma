@@ -62,7 +62,9 @@ public class Fuse : MonoBehaviour {
 	void OnDrawGizmosSelected(){
 		Gizmos.color = Color.cyan;
 		foreach (var l in Lights) {
-			Gizmos.DrawLine (this.transform.position, l.transform.position);               
+			if(l != null){
+				Gizmos.DrawLine (this.transform.position, l.transform.position);               
+			}
 		}
 	}
 #endif
