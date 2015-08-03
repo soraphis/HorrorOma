@@ -62,10 +62,10 @@ public class PlayerActionSensor : MonoBehaviour {
 			if (Selected == null)
 				return;
 
-			IViewOver c = (IViewOver)Selected.GetComponent(typeof(IViewOver));
-			if(c != null){
-				c.fireAction();
-			}
+		    foreach (var c in Selected.GetComponents(typeof(IViewOver)))
+		    {
+		        ((IViewOver)c).fireAction();
+		    }
 		}
 	}
 

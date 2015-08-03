@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Assets.Scripts
 {
-    internal class FrontDoorTrigger : MonoBehaviour
+    class FrontDoorTrigger : MonoBehaviour
     {
         public bool IsBoxWithinCollider { get; private set; }
 

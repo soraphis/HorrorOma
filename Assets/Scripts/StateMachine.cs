@@ -3,7 +3,9 @@ using System.Collections;
 
 public enum GameState{
 
-	GameStart, SearchBox1, FoundBox1, DoorOpened, SearchBox2, FoundBox2, DoorLocked, 
+	FindBox01,
+    FindBoxAgain02,
+
 
 }
 
@@ -28,9 +30,10 @@ public class StateMachine {
 
 	public static StateMachine Instance{
 		get{
-			if(_instance == null)
-				StateMachine._instance = new StateMachine();
-			return StateMachine._instance;
+			if(_instance == null) {
+			    StateMachine._instance = new StateMachine {State = GameState.FindBox01};
+			}
+            return StateMachine._instance;
 		}
 	}
 
