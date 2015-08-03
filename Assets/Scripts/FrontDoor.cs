@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Assets.Scripts
 {
@@ -14,8 +13,6 @@ namespace Assets.Scripts
         public void fireAction()
         {
             if(StateMachine.Instance.State == GameState.FindBox01) { 
-
-                Assert.IsNotNull(Trigger);
 
                 if (!Trigger.IsBoxWithinCollider) return;
 
