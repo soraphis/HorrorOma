@@ -30,6 +30,7 @@ ProjectSettings/ProjectSettings.asset
 /*.booproj
 
 .idea/
+.consulo/
 
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
