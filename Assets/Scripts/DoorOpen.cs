@@ -13,6 +13,7 @@ public class DoorOpen : MonoBehaviour, IViewOver {
 		if (!open && locked) {
 			if(doorlocked != null && ! audioSource.isPlaying){
 				audioSource.PlayOneShot(doorlocked);
+                return;
 			}
 		}
 		sleep = false;
