@@ -34,12 +34,18 @@ public class PlayerActionSensor : MonoBehaviour {
 			Highlighter h;
 			if(this.Selected != null){
 				h = this.Selected.GetComponent<Highlighter> ();
-				if(h != null) h.highlighted = false;
+				if(h != null) {
+					h.highlighted = false;
+                    GameObject.FindGameObjectWithTag("UICanvas").GetComponentInChildren<UISelector>().Visible = false;
+				}
 			}
 
 			if(newselect != null){
 				h = newselect.GetComponent<Highlighter> ();
-				if(h != null) h.highlighted = true;
+				if(h != null){
+                    h.highlighted = true;
+                    GameObject.FindGameObjectWithTag("UICanvas").GetComponentInChildren<UISelector>().Visible = true;
+                }
 			}
 		}
 

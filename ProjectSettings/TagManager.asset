@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Door
   - Kiste
+  - UICanvas
   layers:
   - Default
   - TransparentFX

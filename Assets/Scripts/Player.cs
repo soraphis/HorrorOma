@@ -37,6 +37,8 @@ public class Player : MonoBehaviour {
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 
+		Application.LoadLevelAdditive("UIScene");
+
 		if (BOX.worldObject.activeSelf) {
 			BOX.handsObject.SetActive(false);
 		}

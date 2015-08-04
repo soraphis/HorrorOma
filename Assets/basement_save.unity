@@ -1073,7 +1073,7 @@ LevelGameManager:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -1097,7 +1097,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-  m_LightmapSnapshot: {fileID: 112000000, guid: c03b642c5b9b9984498a69039ce84188,
+  m_LightmapSnapshot: {fileID: 112000000, guid: 0e9d338c46c824f4f97712d706029d71,
     type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -7857,7 +7857,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
 --- !u!1001 &95323725
 Prefab:
   m_ObjectHideFlags: 0
@@ -35325,7 +35325,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!43 &950250715
 Mesh:
   m_ObjectHideFlags: 0
