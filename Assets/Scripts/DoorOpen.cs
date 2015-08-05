@@ -1,27 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DoorOpen : MonoBehaviour, IViewOver {
-
-	#region IViewOver implementation
-	public void fireSelect ()
-	{
-
-	}
-	public void fireAction ()
-	{
-		if (!open && locked) {
-			if(doorlocked != null && ! audioSource.isPlaying){
-				audioSource.PlayOneShot(doorlocked);
-                return;
-			}
-		}
-		sleep = false;
-		time = 0.0f;
-		open = !open;
-		startRotation = parent.transform.rotation;
-	}
-	#endregion
+/*
+ * Place this at the door
+ */
+public class DoorOpen : MonoBehaviour{
 
 	private bool open = false;
 	private bool closed = true; // for simple sound controll
@@ -34,7 +17,6 @@ public class DoorOpen : MonoBehaviour, IViewOver {
 
 	public bool locked = false;
 
-
 	private AudioSource audioSource;
 	public AudioClip dooropen;
 	public AudioClip doorclose;
@@ -46,7 +28,23 @@ public class DoorOpen : MonoBehaviour, IViewOver {
 	private Quaternion openedRotation;
 
 	private Transform parent;
+
+
+    public void Trigger(){
+        if (!open && locked) {
+            if(doorlocked != null && ! audioSource.isPlaying){
+                audioSource.PlayOneShot(doorlocked);
+                return;
+            }
+        }
+        sleep = false;
+        time = 0.0f;
+        open = !open;
+        startRotation = parent.transform.rotation;
+    }
+
 	void Start () {
+
 		this.parent = this.transform.parent.parent;
 		startRotation = parent.transform.rotation * Quaternion.identity;
 		openedRotation = startRotation * Quaternion.Euler (0, 80, 0);
