@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
+using UnityEditor;
 using UnityEngine;
 
 public class Player : MonoBehaviour {

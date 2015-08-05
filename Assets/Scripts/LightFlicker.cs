@@ -21,8 +21,8 @@ public class LightFlicker : MonoBehaviour {
 		if(doesFlicker || forced){
 			t -= Time.deltaTime;
 			if(t < 0){
-
 				if(this.mylight.enabled){
+                    GetComponent<AudioSource>().Play();
 					StartCoroutine(flickerOut());
 					t = Random.Range(1.3f, 2.8f);
 					rend.material.SetColor("_EmissionColor", Color.white*0.8f);

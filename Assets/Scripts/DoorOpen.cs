@@ -29,6 +29,10 @@ public class DoorOpen : MonoBehaviour{
 
 	private Transform parent;
 
+    public bool Open{
+        get{ return open; }
+        private set{ open = value; }
+    }
 
     public void Trigger(){
         if (!open && locked) {

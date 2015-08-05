@@ -18,6 +18,7 @@ namespace Assets.Scripts
 			foreach (Fuse fuse in fuses) {
 				fuse.powered = !fuse.powered;
 			}
+            GetComponent<AudioSource>().Play();
 		}
 
 		#endregion
