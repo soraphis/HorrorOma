@@ -5,8 +5,8 @@ public enum GameState{
 
 	FindBox01,
     FindBoxAgain02,
-
-
+    FindeWerkzeuge03,
+    WaterBoiler04,
 }
 
 
