@@ -8,16 +8,18 @@ public class Fuse : MonoBehaviour {
 
 
 	private bool _powered = false;
+	public bool PowerAble = true;
 
 	public bool powered {
 		get {
 			return _powered;
 		}
 		set {
-			_powered = value;
+			_powered = value & PowerAble;
 			toggleItems();
 		}
 	}	
+	
 
 
 	public GameObject[] Lights = null;
