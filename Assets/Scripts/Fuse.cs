@@ -6,8 +6,9 @@ using System.Collections;
 
 public class Fuse : MonoBehaviour {
 
-
-	private bool _powered = false;
+    private Color offColor = new Color(100,0,0);
+    private Color onColor = new Color(0, 100, 0);
+    private bool _powered = false;
 	public bool PowerAble = true;
 
 	public bool powered {
@@ -18,15 +19,37 @@ public class Fuse : MonoBehaviour {
 			_powered = value & PowerAble;
 			toggleItems();
 		}
-	}	
-	
+	}
 
+    private void UpdateLighswitchesLight()
+    {
+        foreach (Transform child in transform)
+        {
+            var lightTransform = child.Find("light");
+            if (lightTransform != null)
+            {
+                if (powered)
+                {
+                    var mat = lightTransform.GetComponent<MeshRenderer>().material;
+                    mat.SetColor("_Color", onColor);
+                    mat.SetColor("_Emission", onColor);
+                }
+                else
+                {
+                    var mat = lightTransform.GetComponent<MeshRenderer>().material;
+                    mat.SetColor("_Color", offColor);
+                    mat.SetColor("_Emission", offColor);
+                }
+            }
+        }
+    }
 
 	public GameObject[] Lights = null;
 
 
-	private void toggleItems(){
-		foreach (var myGameObject in Lights)
+	private void toggleItems()
+	{
+        foreach (var myGameObject in Lights)
 		{
 			// each lightsorce (pointlight, spotlight, ...)
 			foreach (var myLight in myGameObject.GetComponentsInChildren<Light>(true))
@@ -52,7 +75,9 @@ public class Fuse : MonoBehaviour {
 			}
 			DynamicGI.UpdateMaterials(rend);
 		}
-	}
+
+        UpdateLighswitchesLight();
+    }
 
 	void Start(){
 
