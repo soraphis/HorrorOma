@@ -10,6 +10,8 @@ namespace Assets.Scripts
     {
         public FrontDoorTrigger Trigger= null;
 
+        private Vector3 boxStartPosition;
+
         public void fireAction()
         {
             if(StateMachine.Instance.State == GameState.FindBox01) { 
@@ -17,8 +19,7 @@ namespace Assets.Scripts
                 if (!Trigger.IsBoxWithinCollider) return;
 
                 var kiste = GameObject.FindWithTag("Kiste");
-                var kisteTransform = kiste.GetComponent<Transform>();
-                kisteTransform.localPosition = new Vector3(18.417f, 1.255f, -7.81f);
+                kiste.transform.localPosition = boxStartPosition;
 
                 StateMachine.Instance.State = GameState.FindBoxAgain02;
             }
@@ -27,6 +28,11 @@ namespace Assets.Scripts
         public void fireSelect()
         {
 
+        }
+
+        void Start(){
+            var kiste = GameObject.FindWithTag("Kiste");
+            boxStartPosition = kiste.transform.localPosition;
         }
     }
 }

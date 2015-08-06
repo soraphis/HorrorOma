@@ -24,7 +24,6 @@ public class TrigZone_Door : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if(! other.CompareTag("Player")){
-            Debug.Log("Collision - but not with player. Printing this cause it should not happen");
             return;
         }
 
