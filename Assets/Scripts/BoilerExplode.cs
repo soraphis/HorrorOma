@@ -5,8 +5,6 @@ using Assets.Scripts;
 public class BoilerExplode : MonoBehaviour {
 	public bool Sleep = true;
 	private float countDown = 15;
-	public AudioClip Audio;
-	public Transform Position;
 
 	void Update(){
 		if (Sleep)
@@ -16,7 +14,7 @@ public class BoilerExplode : MonoBehaviour {
 			if (countDown <= 0) {
 				Debug.Log ("EXPLOSION");
 				gameObject.SendMessage("DamageRequest");
-				AudioSource.PlayClipAtPoint(Audio, Position.position);
+				GetComponentInChildren<AudioSource>().Play();
 				StateMachine.Instance.State = GameState.WaterRises05;
 				Sleep = true;
 
