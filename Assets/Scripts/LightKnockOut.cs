@@ -15,6 +15,7 @@ class LightKnockOut : MonoBehaviour, IViewOver
 			fuse.powered = false;
 			fuse.PowerAble = !fuse.PowerAble;
 		}
+        GetComponent<AudioSource>().Play();
         if(Boiler != null)
 			Boiler.GetComponent<BoilerExplode> ().Sleep = false;
 	}
