@@ -21,10 +21,11 @@ public class Player : MonoBehaviour {
 
 	public delegate void LevelLoadComplete();
     public event LevelLoadComplete onLevelLoad;
+	public GameObject LampLight;
 
 	[HideInInspector]
 	public Pickable inhand = null;
-	
+
 	public Pickable BOX;
 
 	private IEnumerator Load(){
@@ -32,7 +33,6 @@ public class Player : MonoBehaviour {
 		yield return levelLoader;
         if(onLevelLoad != null) onLevelLoad();
     }
-
 
 	protected Player (){
 
@@ -52,6 +52,18 @@ public class Player : MonoBehaviour {
 
 		if (BOX.worldObject.activeSelf) {
 			BOX.handsObject.SetActive(false);
+		}
+
+		if (LAMP.worldObject.activeSelf) {
+			LAMP.handsObject.SetActive(false);
+		}
+	}
+
+	void Update(){
+		if (LAMP.worldObject.activeSelf) {
+			LampLight.SetActive (false);
+		} else {
+			LampLight.SetActive(true);
 		}
 	}
 }
