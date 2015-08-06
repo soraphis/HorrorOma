@@ -7,6 +7,7 @@ TagManager:
   - Door
   - Kiste
   - UICanvas
+  - Taschenlampe
   layers:
   - Default
   - TransparentFX

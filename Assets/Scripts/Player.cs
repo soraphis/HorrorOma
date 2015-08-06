@@ -18,12 +18,18 @@ public class Player : MonoBehaviour {
 		private set;
 	}
 
+	public GameObject LampLight;
 
 	[HideInInspector]
 	public Pickable inhand = null;
 	
 	public Pickable BOX;
 
+
+	[HideInInspector]
+	public Pickable inhand2 = null;
+	
+	public Pickable LAMP;
 
 	protected Player (){
 
@@ -42,6 +48,18 @@ public class Player : MonoBehaviour {
 
 		if (BOX.worldObject.activeSelf) {
 			BOX.handsObject.SetActive(false);
+		}
+
+		if (LAMP.worldObject.activeSelf) {
+			LAMP.handsObject.SetActive(false);
+		}
+	}
+
+	void Update(){
+		if (LAMP.worldObject.activeSelf) {
+			LampLight.SetActive (false);
+		} else {
+			LampLight.SetActive(true);
 		}
 	}
 }

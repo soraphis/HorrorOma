@@ -5632,14 +5632,14 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Detail
+          name: _Occlusion
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Occlusion
+          name: _Detail
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -5691,10 +5691,6 @@ Material:
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
-        second: 1
-      data:
-        first:
           name: _Mode
         second: 0
       data:
@@ -5704,6 +5700,10 @@ Material:
       data:
         first:
           name: _Lightmapping
+        second: 1
+      data:
+        first:
+          name: _EmissionScaleUI
         second: 1
     m_Colors:
       data:
@@ -9442,12 +9442,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebf3561c3aa61e4f945a54ed4036a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LampLight: {fileID: 1713802229}
   inhand:
     handsObject: {fileID: 0}
     worldObject: {fileID: 0}
   BOX:
     handsObject: {fileID: 914382960}
     worldObject: {fileID: 1909265632}
+  inhand2:
+    handsObject: {fileID: 0}
+    worldObject: {fileID: 0}
+  LAMP:
+    handsObject: {fileID: 742036301}
+    worldObject: {fileID: 1594187727}
 --- !u!1 &311717088
 GameObject:
   m_ObjectHideFlags: 0
@@ -16655,7 +16662,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 622114170}
+  m_Mesh: {fileID: 1300216741}
 --- !u!114 &555041848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16771,7 +16778,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 555041845}
-  m_Mesh: {fileID: 622114170}
+  m_Mesh: {fileID: 1300216741}
 --- !u!1001 &560701175
 Prefab:
   m_ObjectHideFlags: 0
@@ -17062,6 +17069,7 @@ Transform:
   m_Children:
   - {fileID: 722502952}
   - {fileID: 914382961}
+  - {fileID: 742036302}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &560876972
@@ -20274,15 +20282,15 @@ Material:
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
-        second: 0
-      data:
-        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
         second: 0
     m_Colors:
       data:
@@ -20329,7 +20337,7 @@ Transform:
   - {fileID: 1478930188}
   - {fileID: 1578205453}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1001 &606467857
 Prefab:
   m_ObjectHideFlags: 0
@@ -20656,134 +20664,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: b978538a476b6eb40947e51a322ed82c, type: 3}
   m_PrefabInternal: {fileID: 610103942}
---- !u!43 &622114170
-Mesh:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1809950
-  serializedVersion: 8
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 6
-    topology: 0
-    firstVertex: 0
-    vertexCount: 4
-    localAABB:
-      m_Center: {x: 2.375, y: 5.96046448e-08, z: 1}
-      m_Extent: {x: 4.625, y: 0, z: 1}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexBuffer: 000001000200010003000200
-  m_Skin: []
-  m_VertexData:
-    m_CurrentChannels: 143
-    m_VertexCount: 4
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 40
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 48
-      format: 0
-      dimension: 4
-    m_DataSize: 256
-    _typelessdata: 000010c00000803300000000000000000000803f000000000000803f0000803f0000803f0000803f00000000000000000000803f0000000000000000000080bf000010c00000803300000040000000000000803f000000000000803f0000803f0000803f0000803f00000000000000400000803f0000000000000000000080bf0000e0400000803300000000000000000000803f000000000000803f0000803f0000803f0000803f00001441000000000000803f0000000000000000000080bf0000e0400000803300000040000000000000803f000000000000803f0000803f0000803f0000803f00001441000000400000803f0000000000000000000080bf
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 2.375, y: 5.96046448e-08, z: 1}
-    m_Extent: {x: 4.625, y: 0, z: 1}
-  m_MeshUsageFlags: 0
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshOptimized: 0
 --- !u!1001 &622258530
 Prefab:
   m_ObjectHideFlags: 0
@@ -22859,15 +22739,15 @@ Material:
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
-        second: 0
-      data:
-        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
         second: 0
     m_Colors:
       data:
@@ -23844,6 +23724,81 @@ Transform:
   - {fileID: 2127810528}
   m_Father: {fileID: 1327767113}
   m_RootOrder: 0
+--- !u!1 &742036301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: 6632ad2f8b1238644868eb8bde15001b, type: 3}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 742036302}
+  - 33: {fileID: 742036304}
+  - 23: {fileID: 742036303}
+  - 64: {fileID: 742036305}
+  m_Layer: 0
+  m_Name: Taschenlampe inhand
+  m_TagString: Taschenlampe
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &742036302
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: 6632ad2f8b1238644868eb8bde15001b, type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742036301}
+  m_LocalRotation: {x: 1.33158068e-07, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.153999999, y: .370000005, z: .874000013}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_Children: []
+  m_Father: {fileID: 560876971}
+  m_RootOrder: 2
+--- !u!23 &742036303
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 6632ad2f8b1238644868eb8bde15001b,
+    type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742036301}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 21a893133afb92749ae4a093b81bdd19, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &742036304
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 6632ad2f8b1238644868eb8bde15001b,
+    type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742036301}
+  m_Mesh: {fileID: 4300000, guid: 6632ad2f8b1238644868eb8bde15001b, type: 3}
+--- !u!64 &742036305
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742036301}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 6632ad2f8b1238644868eb8bde15001b, type: 3}
 --- !u!1001 &742553951
 Prefab:
   m_ObjectHideFlags: 0
@@ -27176,15 +27131,15 @@ Material:
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
-        second: 0
-      data:
-        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
         second: 0
     m_Colors:
       data:
@@ -38210,7 +38165,7 @@ Transform:
   m_Children:
   - {fileID: 641256682}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1001 &1061394082
 Prefab:
   m_ObjectHideFlags: 0
@@ -38957,14 +38912,14 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Detail
+          name: _Occlusion
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Occlusion
+          name: _Detail
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -39016,10 +38971,6 @@ Material:
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
-        second: 1
-      data:
-        first:
           name: _Mode
         second: 0
       data:
@@ -39029,6 +38980,10 @@ Material:
       data:
         first:
           name: _Lightmapping
+        second: 1
+      data:
+        first:
+          name: _EmissionScaleUI
         second: 1
     m_Colors:
       data:
@@ -40982,7 +40937,7 @@ Transform:
   - {fileID: 1971958744}
   - {fileID: 166230938}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1001 &1144293153
 Prefab:
   m_ObjectHideFlags: 0
@@ -45125,6 +45080,134 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!43 &1300216741
+Mesh:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: pb_Mesh30234
+  serializedVersion: 8
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 6
+    topology: 0
+    firstVertex: 0
+    vertexCount: 4
+    localAABB:
+      m_Center: {x: 2.375, y: 5.96046448e-08, z: 1}
+      m_Extent: {x: 4.625, y: 0, z: 1}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexBuffer: 000001000200010003000200
+  m_Skin: []
+  m_VertexData:
+    m_CurrentChannels: 159
+    m_VertexCount: 4
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 40
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 48
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 56
+      format: 0
+      dimension: 4
+    m_DataSize: 288
+    _typelessdata: 000010c00000803300000000000000000000803f000000000000803f0000803f0000803f0000803f0000000000000000e3807b3f0bd7a33c0000803f0000000000000000000080bf000010c00000803300000040000000000000803f000000000000803f0000803f0000803f0000803f0000000000000040e4807b3f7891693e0000803f0000000000000000000080bf0000e0400000803300000000000000000000803f000000000000803f0000803f0000803f0000803f00001441000000000bd7a33c0bd7a33c0000803f0000000000000000000080bf0000e0400000803300000040000000000000803f000000000000803f0000803f0000803f0000803f000014410000004020d7a33c7891693e0000803f0000000000000000000080bf
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 2.375, y: 5.96046448e-08, z: 1}
+    m_Extent: {x: 4.625, y: 0, z: 1}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshOptimized: 0
 --- !u!1 &1301398301
 GameObject:
   m_ObjectHideFlags: 0
@@ -45805,15 +45888,15 @@ Material:
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
-        second: 0
-      data:
-        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
         second: 0
     m_Colors:
       data:
@@ -56793,7 +56876,7 @@ Transform:
   - {fileID: 1990759637}
   - {fileID: 161496850}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1001 &1502336480
 Prefab:
   m_ObjectHideFlags: 0
@@ -57146,15 +57229,15 @@ Material:
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
-        second: 0
-      data:
-        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
+        second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
         second: 0
     m_Colors:
       data:
@@ -59335,6 +59418,127 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1591422665}
   m_Mesh: {fileID: 4300002, guid: 4cc5faa6cac6dc344a482daa9e514c42, type: 3}
+--- !u!1 &1594187727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: 6632ad2f8b1238644868eb8bde15001b, type: 3}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1594187732}
+  - 33: {fileID: 1594187731}
+  - 23: {fileID: 1594187730}
+  - 114: {fileID: 1594187729}
+  - 114: {fileID: 1594187728}
+  - 54: {fileID: 1594187733}
+  - 64: {fileID: 1594187734}
+  m_Layer: 0
+  m_Name: Taschenlampe onground
+  m_TagString: Taschenlampe
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1594187728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1594187727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1bcf17c001e4b4aa1d13183d5dcd1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1594187729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1594187727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f90bf0cd93b32548ab43e0bf07cddaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineShader: {fileID: 4800000, guid: d2ff2411abd05894292164df8fffe45f, type: 3}
+  defaultShader: {fileID: 0}
+  outlineSize: .00249999994
+  outlineColor: {r: 1, g: .666670024, b: 0, a: 1}
+  Player: {fileID: 0}
+  highlighted: 0
+--- !u!23 &1594187730
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 6632ad2f8b1238644868eb8bde15001b,
+    type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1594187727}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 21a893133afb92749ae4a093b81bdd19, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &1594187731
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 6632ad2f8b1238644868eb8bde15001b,
+    type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1594187727}
+  m_Mesh: {fileID: 4300000, guid: 6632ad2f8b1238644868eb8bde15001b, type: 3}
+--- !u!4 &1594187732
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: 6632ad2f8b1238644868eb8bde15001b, type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1594187727}
+  m_LocalRotation: {x: 8.14603354e-08, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.0980005, y: .432000011, z: 3.41468191}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+--- !u!54 &1594187733
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1594187727}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &1594187734
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1594187727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_Mesh: {fileID: 4300000, guid: 6632ad2f8b1238644868eb8bde15001b, type: 3}
 --- !u!1001 &1596409749
 Prefab:
   m_ObjectHideFlags: 0
@@ -62364,7 +62568,7 @@ Transform:
   - {fileID: 886634610}
   - {fileID: 1665761948}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!1001 &1601964630
 Prefab:
   m_ObjectHideFlags: 0
@@ -62468,7 +62672,7 @@ Transform:
   m_Children:
   - {fileID: 600672506}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1001 &1618209851
 Prefab:
   m_ObjectHideFlags: 0
@@ -66015,11 +66219,11 @@ GameObject:
   - 108: {fileID: 1713802230}
   m_Layer: 0
   m_Name: Flashlight
-  m_TagString: Untagged
+  m_TagString: TaschenlampenLicht
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1713802230
 Light:
   m_ObjectHideFlags: 0
@@ -68157,14 +68361,14 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Detail
+          name: _Occlusion
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Occlusion
+          name: _Detail
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -68216,10 +68420,6 @@ Material:
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
-        second: 1
-      data:
-        first:
           name: _Mode
         second: 0
       data:
@@ -68229,6 +68429,10 @@ Material:
       data:
         first:
           name: _Lightmapping
+        second: 1
+      data:
+        first:
+          name: _EmissionScaleUI
         second: 1
     m_Colors:
       data:
@@ -72614,6 +72818,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d4e3ffcc0d7bc8459d031418c8e465b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d4e3ffcc0d7bc8459d031418c8e465b, type: 3}
   m_IsPrefabParent: 0
@@ -73333,7 +73541,7 @@ Transform:
   - {fileID: 282112226}
   - {fileID: 553741459}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1001 &2001698757
 Prefab:
   m_ObjectHideFlags: 0
@@ -74157,7 +74365,7 @@ Transform:
   - {fileID: 156687525}
   - {fileID: 166030975}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &2037791385
 GameObject:
   m_ObjectHideFlags: 0
