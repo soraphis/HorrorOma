@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Mono.Xml.Xsl;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.UI;
 using UnityStandardAssets.Water;
 
 namespace Assets.Scripts
@@ -14,9 +16,9 @@ namespace Assets.Scripts
         //private const float speed = 1/60f;
         private float slowness = 45f; // inverse of speed
         private float slownessInc = 5.0f;
-        public GameObject[] ActivateGameObjects;
-        public GameObject[] DeactivateGameObjects;
-        public CanvasGroup WhiteCanvasGroupForFlash;
+        public GameObject[] ActivateGameObjects = null;
+        public GameObject[] DeactivateGameObjects = null;
+        private Image flashImage;
         private bool flash = false;
         private const float flashSlowness = 2f;
 
@@ -26,7 +28,8 @@ namespace Assets.Scripts
             {
                 StateMachine.Instance.State = GameState.WaterBoiler04;
                 flash = true;
-                WhiteCanvasGroupForFlash.alpha = 1;
+                flashImage.color = Color.white; // alpha should be 1
+
 
 
                 foreach (var gameObj in ActivateGameObjects)
@@ -38,6 +41,21 @@ namespace Assets.Scripts
                     gameObj.SetActive(false);
                 }
             }
+        }
+
+        void UISceneLoaded(){
+            GameObject canvas = GameObject.FindGameObjectWithTag("UICanvas");
+            //foreach(Transform t in canvas.GetComponentsInChildren<Transform>()){
+            //    Debug.Log(t.gameObject.name);
+            //}
+            flashImage = canvas.transform.Find("GamestateObjects/Panel").GetComponent<Image>();
+            if(flashImage == null){
+                Debug.Log("image not found");
+            }
+        }
+
+        void Start(){
+            Player.instance.onLevelLoad += UISceneLoaded;
         }
 
         private void Update()
@@ -52,12 +70,14 @@ namespace Assets.Scripts
 
                 if (flash)
                 {
-                    WhiteCanvasGroupForFlash.alpha = WhiteCanvasGroupForFlash.alpha - (Time.deltaTime * 1/flashSlowness);
-                    if (WhiteCanvasGroupForFlash.alpha <= 0)
+                    Color c = flashImage.color;
+                    c.a = c.a - (Time.deltaTime * 1/flashSlowness);
+                    if (c.a <= 0)
                     {
-                        WhiteCanvasGroupForFlash.alpha = 0;
+                        c.a = 0;
                         flash = false;
                     }
+                    flashImage.color = c;
                 }
             }
         }

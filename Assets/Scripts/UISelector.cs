@@ -19,7 +19,7 @@ public class UISelector : MonoBehaviour {
             Fade(f);
             yield return null;
         }
-        Fade(0);
+        Fade(0f);
     }
 
     private IEnumerator FadeIn(){
@@ -27,7 +27,7 @@ public class UISelector : MonoBehaviour {
             Fade(f);
             yield return null;
         }
-        Fade(1);
+        Fade(1f);
     }
 
     private bool visible = true;

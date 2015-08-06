@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 using System;
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
@@ -18,27 +19,36 @@ public class Player : MonoBehaviour {
 		private set;
 	}
 
+	public delegate void LevelLoadComplete();
+    public event LevelLoadComplete onLevelLoad;
 
 	[HideInInspector]
 	public Pickable inhand = null;
 	
 	public Pickable BOX;
 
+	private IEnumerator Load(){
+        AsyncOperation levelLoader = Application.LoadLevelAdditiveAsync("UIScene");
+		yield return levelLoader;
+        if(onLevelLoad != null) onLevelLoad();
+    }
+
 
 	protected Player (){
 
 	}
-	
 
 
-	void Start(){
+    void Awake(){
+        Player.instance = this;
+    }
 
-		Player.instance = this;
+   	void Start(){
 
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
-		Application.LoadLevelAdditive("UIScene");
+        StartCoroutine(Load());
 
 		if (BOX.worldObject.activeSelf) {
 			BOX.handsObject.SetActive(false);

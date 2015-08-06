@@ -29,7 +29,6 @@ public class TrigZone_Door : MonoBehaviour {
         }
 
         float rand = UnityEngine.Random.value;
-        Debug.Log(rand);
         if(rand <= Probability){
             DoorOpen c = Door.GetComponentInChildren<DoorOpen>();
 

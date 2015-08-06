@@ -7,10 +7,12 @@ public class LightFlicker : MonoBehaviour {
 	float t;
 	public bool doesFlicker = false;
 	private bool forced = false;
+    private AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
 		mylight = this.GetComponent<Light>();
+        audioSource = this.GetComponentInChildren<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -22,7 +24,7 @@ public class LightFlicker : MonoBehaviour {
 			t -= Time.deltaTime;
 			if(t < 0){
 				if(this.mylight.enabled){
-                    GetComponent<AudioSource>().Play();
+                    audioSource.Play();
 					StartCoroutine(flickerOut());
 					t = Random.Range(1.3f, 2.8f);
 					rend.material.SetColor("_EmissionColor", Color.white*0.8f);
