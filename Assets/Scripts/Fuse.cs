@@ -31,15 +31,15 @@ public class Fuse : MonoBehaviour {
             {
                 if (powered)
                 {
-                    var mat = lightTransform.GetComponent<MeshRenderer>().material;
-                    mat.SetColor("_Color", onColor);
-                    mat.SetColor("_Emission", onColor);
+                    var mats = lightTransform.GetComponent<Renderer>().materials;
+                    mats[0].SetColor("_Color", onColor);
+                    mats[0].SetColor("_EmissionColor", onColor);
                 }
                 else
                 {
                     var mat = lightTransform.GetComponent<MeshRenderer>().material;
                     mat.SetColor("_Color", offColor);
-                    mat.SetColor("_Emission", offColor);
+                    mat.SetColor("_EmissionColor", offColor);
                 }
             }
         }
