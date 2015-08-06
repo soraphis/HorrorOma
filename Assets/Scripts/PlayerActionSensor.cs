@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEditor;
+using UnityEngine;
 
 
 public class PlayerActionSensor : MonoBehaviour {
@@ -58,11 +59,18 @@ public class PlayerActionSensor : MonoBehaviour {
 			   && Player.instance.inhand.worldObject != null
 			   && Player.instance.inhand.handsObject != null){
 				// Debug.Log (Player.instance.inhand);
+                if(Player.instance.inhand == Player.instance.BOX){
+                    // drop that shit
+                    Player.instance.inhand.PickDrop();
+                    Player.instance.inhand = null;
+                    return;
+                }else if(Player.instance.inhand == Player.instance.LAMP
+                && (Selected == null || Selected.tag == "Kiste")){
+                    Player.instance.inhand.PickDrop();
+                    Player.instance.inhand = null;
+                    return;
+                }
 
-				// drop that shit
-				Player.instance.inhand.PickDrop();
-				Player.instance.inhand = null;
-				return;
 			}
 			if (Selected == null)
 				return;
@@ -78,8 +86,10 @@ public class PlayerActionSensor : MonoBehaviour {
 
 	void TriggerObject(Collider other, out GameObject newselect){
 		newselect = null;
-		if (other.gameObject.layer == 8) // world
-			return;
+		if (other.gameObject.layer == 8 // world
+         || other.gameObject.layer == 9 // decals
+         || other.gameObject.layer == 10) // doodads
+            return;
 
 		newselect = other.gameObject;
 	}

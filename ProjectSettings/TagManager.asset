@@ -8,6 +8,7 @@ TagManager:
   - Kiste
   - UICanvas
   - Taschenlampe
+  - Tuer
   layers:
   - Default
   - TransparentFX
