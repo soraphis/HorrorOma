@@ -88,6 +88,7 @@ public class PlayerActionSensor : MonoBehaviour {
 		newselect = null;
 		if (other.gameObject.layer == 8 // world
          || other.gameObject.layer == 9 // decals
+         || other.gameObject.layer == 4 // water
          || other.gameObject.layer == 10) // doodads
             return;
 

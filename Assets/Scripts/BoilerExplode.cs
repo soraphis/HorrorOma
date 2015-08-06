@@ -3,7 +3,8 @@ using UnityEditor;
 using Assets.Scripts;
 
 public class BoilerExplode : MonoBehaviour {
-	public bool Sleep = true;
+
+    public bool Sleep = true;
 	private float countDown = 15;
 
 	void Update(){
@@ -16,8 +17,11 @@ public class BoilerExplode : MonoBehaviour {
 				gameObject.SendMessage("DamageRequest");
 				GetComponentInChildren<AudioSource>().Play();
 				StateMachine.Instance.State = GameState.WaterRises05;
-				Sleep = true;
 
+                WaterSystem.instance.WaterIncrease2 = true;
+
+				Destroy(this); // should destroy this script
+                Sleep = true; // should not be necessary
 			}
 			
 		}
