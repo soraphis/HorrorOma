@@ -34983,8 +34983,8 @@ GameObject:
   - 54: {fileID: 560876968}
   - 82: {fileID: 560876967}
   - 114: {fileID: 560876966}
-  - 114: {fileID: 560876973}
   - 114: {fileID: 560876972}
+  - 114: {fileID: 560876973}
   m_Layer: 0
   m_Name: Akteuer
   m_TagString: Player
@@ -35219,10 +35219,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 560876965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0978cfcce01e814458b9aa38a3bf8217, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ac0a00e66132e2449049cac4090840a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  Water: {fileID: 204333377}
+  Boiler: {fileID: 1769649374}
+  TotBoxErtrunkenSprite: {fileID: 21300000, guid: e9e4d20b20c16524a874b83eabd5c937,
+    type: 3}
+  TotErtrunkenSprite: {fileID: 21300000, guid: da57a4d20ef7b624db9c68cc881eab4c, type: 3}
+  TotExplosionSprite: {fileID: 21300000, guid: a6ccb4e78dec2a74482da087b406fb63, type: 3}
+  TotStromSprite: {fileID: 21300000, guid: 33bb4f3bc59a6f34f906deea111254c1, type: 3}
 --- !u!1 &565691946
 GameObject:
   m_ObjectHideFlags: 0
@@ -36702,15 +36708,15 @@ Material:
         second: 0
       data:
         first:
+          name: _EmissionScaleUI
+        second: 0
+      data:
+        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
-        second: 0
-      data:
-        first:
-          name: _EmissionScaleUI
         second: 0
     m_Colors:
       data:
@@ -39897,15 +39903,15 @@ Material:
         second: 0
       data:
         first:
+          name: _EmissionScaleUI
+        second: 0
+      data:
+        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
-        second: 0
-      data:
-        first:
-          name: _EmissionScaleUI
         second: 0
     m_Colors:
       data:
@@ -46384,15 +46390,15 @@ Material:
         second: 0
       data:
         first:
+          name: _EmissionScaleUI
+        second: 0
+      data:
+        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
-        second: 0
-      data:
-        first:
-          name: _EmissionScaleUI
         second: 0
     m_Colors:
       data:
@@ -50505,6 +50511,18 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4d4e3ffcc0d7bc8459d031418c8e465b, type: 3}
   m_PrefabInternal: {fileID: 1967669503}
+--- !u!114 &914382966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 914382960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bebdeabf5a1d9924b829284b1ff10a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Water: {fileID: 0}
 --- !u!43 &914703518
 Mesh:
   m_ObjectHideFlags: 0
@@ -50945,7 +50963,6 @@ GameObject:
   - 114: {fileID: 935667720}
   - 114: {fileID: 935667718}
   - 114: {fileID: 935667719}
-  - 114: {fileID: 935667724}
   m_Layer: 0
   m_Name: waterDropper
   m_TagString: Untagged
@@ -51050,18 +51067,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 935667716}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &935667724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 935667716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06ef639940f5eb248bdbc00b1c0cc399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Water: {fileID: 204333377}
 --- !u!1 &942996262
 GameObject:
   m_ObjectHideFlags: 0
@@ -54451,7 +54456,6 @@ GameObject:
   - 4: {fileID: 1063356095}
   - 33: {fileID: 1063356097}
   - 23: {fileID: 1063356096}
-  - 114: {fileID: 1063356098}
   m_Layer: 0
   m_Name: kabel
   m_TagString: Untagged
@@ -54504,18 +54508,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1063356094}
   m_Mesh: {fileID: 4300000, guid: 817c2021669ade94aa4526142b4083e3, type: 3}
---- !u!114 &1063356098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1063356094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 223123312e08042488b597ea53ebd128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Water: {fileID: 204333377}
 --- !u!1001 &1065268080
 Prefab:
   m_ObjectHideFlags: 0
@@ -64461,15 +64453,15 @@ Material:
         second: 0
       data:
         first:
+          name: _EmissionScaleUI
+        second: 0
+      data:
+        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
-        second: 0
-      data:
-        first:
-          name: _EmissionScaleUI
         second: 0
     m_Colors:
       data:
@@ -70329,15 +70321,15 @@ Material:
         second: 0
       data:
         first:
+          name: _EmissionScaleUI
+        second: 0
+      data:
+        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
-        second: 0
-      data:
-        first:
-          name: _EmissionScaleUI
         second: 0
     m_Colors:
       data:
@@ -81808,17 +81800,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &1769649376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1769649372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a950638336b565947ba89fde7ff41ab3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1774650487 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 4d4e3ffcc0d7bc8459d031418c8e465b, type: 3}
@@ -88526,6 +88507,18 @@ MonoBehaviour:
   outlineColor: {r: 1, g: .666670024, b: 0, a: 1}
   Player: {fileID: 0}
   highlighted: 0
+--- !u!114 &1909265640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909265632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bebdeabf5a1d9924b829284b1ff10a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Water: {fileID: 0}
 --- !u!1001 &1913740054
 Prefab:
   m_ObjectHideFlags: 0
