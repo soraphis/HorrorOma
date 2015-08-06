@@ -10,6 +10,7 @@ public class Fuse : MonoBehaviour {
     private Color onColor = new Color(0, 100, 0);
     private bool _powered = false;
 	public bool PowerAble = true;
+    public bool IsOnAtStart;
 
 	public bool powered {
 		get {
@@ -79,9 +80,17 @@ public class Fuse : MonoBehaviour {
         UpdateLighswitchesLight();
     }
 
-	void Start(){
-
-		toggleItems ();
+	void Start()
+	{
+	    if (IsOnAtStart)
+	    {
+	        _powered = true;
+            UpdateLighswitchesLight();
+	    }
+	    else
+	    {
+	        toggleItems();
+	    }
 	}
 
 
