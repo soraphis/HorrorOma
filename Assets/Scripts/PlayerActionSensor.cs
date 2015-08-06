@@ -64,17 +64,6 @@ public class PlayerActionSensor : MonoBehaviour {
 				Player.instance.inhand = null;
 				return;
 			}
-			//Drop Taschenlampe
-			if(Player.instance.inhand2 != null
-			   && Player.instance.inhand2.worldObject != null
-			   && Player.instance.inhand2.handsObject != null){
-				// Debug.Log (Player.instance.inhand2);
-				
-				// drop that shit
-				Player.instance.inhand2.PickDrop();
-				Player.instance.inhand2 = null;
-				return;
-			}
 			if (Selected == null)
 				return;
 

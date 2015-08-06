@@ -27,6 +27,7 @@ public class Player : MonoBehaviour {
 	public Pickable inhand = null;
 
 	public Pickable BOX;
+	public Pickable LAMP;
 
 	private IEnumerator Load(){
         AsyncOperation levelLoader = Application.LoadLevelAdditiveAsync("UIScene");

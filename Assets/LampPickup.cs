@@ -12,8 +12,8 @@ public class LampPickup : MonoBehaviour, IViewOver {
 	
 	public void fireAction ()
 	{
-		Player.instance.inhand2 = Player.instance.LAMP;
-		Player.instance.inhand2.PickDrop ();
+		Player.instance.inhand = Player.instance.LAMP;
+		Player.instance.inhand.PickDrop ();
 	}
 	
 	#endregion
