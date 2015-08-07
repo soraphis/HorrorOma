@@ -2,7 +2,6 @@
 using System.Collections;
 
 public enum GameState{
-
 	FindBox01,
     FindBoxAgain02,
     FindeWerkzeuge03,
@@ -19,6 +18,13 @@ public class StateMachine {
 
 	public delegate void StateChangedHandler(GameState oldState, GameState newState);
 	public event StateChangedHandler OnStateChanged;
+
+    	// true on first box pickup
+    public bool State1_BoxFound = false;
+    	// true on first box pickup after replacement
+    public bool State2_BoxFound = false;
+
+
 
 	public GameState State{
 		get{ return _state; }

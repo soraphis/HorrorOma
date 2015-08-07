@@ -47,6 +47,11 @@ public class DoorOpen : MonoBehaviour{
         startRotation = parent.transform.rotation;
     }
 
+    // triggers if door is not @param open
+    public void ConditionalTrigger(bool open){
+        if(this.open != open) Trigger();
+    }
+
 	void Start () {
 
 		this.parent = this.transform.parent.parent;
@@ -56,6 +61,19 @@ public class DoorOpen : MonoBehaviour{
 
 		audioSource = this.GetComponent<AudioSource> ();
 	}
+
+	/**
+	 * Closes/Openes door without animation
+	 */
+    public void ForceSet(bool open){
+        this.open = open;
+        Quaternion doorNew = this.open ? openedRotation
+        	: closedRotation;
+        parent.transform.rotation = doorNew;
+        startRotation = parent.transform.rotation;
+        sleep = true;
+        time = 0.0f;
+    }
 
 	void Update () {
 		if(sleep) return;

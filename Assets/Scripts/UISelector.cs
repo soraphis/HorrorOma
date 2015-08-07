@@ -15,11 +15,11 @@ public class UISelector : MonoBehaviour {
     }
 
     private IEnumerator FadeOut(){
-		for(float f = 1f; f >= 0; f -= 0.1f){
+		for(float f = 1f; f >= 0.1f; f -= 0.1f){
             Fade(f);
             yield return null;
         }
-        Fade(0f);
+        Fade(0.1f);
     }
 
     private IEnumerator FadeIn(){
