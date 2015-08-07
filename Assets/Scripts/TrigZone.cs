@@ -1,5 +1,6 @@
 using System;
 using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 using com.spacepuppyeditor.Inspectors;
@@ -15,12 +16,15 @@ public class TrigZone : MonoBehaviour{
 
     }
 
-    public int Usages = 1; // -1 is unlimited
+    public int EnterUsages = 1; // -1 is unlimited
+    public int ExitUsages = 1; // -1 is unlimited
 
     [Range(0.0f, 1.0f)]
     public float Probability = 0.1f;
 
     public ColliderFacingDirection FacingDirection = ColliderFacingDirection.DONTCARE;
+    public int GameState = -1;
+
     public TriggerZoneEvent EnterEvents;
     [TagSelectorAttribute]
     public String EnterObjectTag = "Player";
@@ -30,7 +34,9 @@ public class TrigZone : MonoBehaviour{
     public String ExitObjectTag = "Player";
 
     void OnTriggerEnter(Collider other) {
-        if (! other.CompareTag(EnterObjectTag)) { return; }
+        if(EnterUsages == 0) return;
+        if (! other.CompareTag(EnterObjectTag))return;
+        if (GameState != -1 && GameState != (int)StateMachine.Instance.State) return;
         if(UnityEngine.Random.value > Probability) return;
 
         for(int i = 0; i < EnterEvents.GetPersistentEventCount(); ++i){
@@ -39,10 +45,34 @@ public class TrigZone : MonoBehaviour{
             if(! checkFacing(other, FacingDirection, go)) return;
         }
         EnterEvents.Invoke();
-        if((--Usages) == 0){ // Usages = -1 should be (nearly) unlimited
-            GameObject.Destroy(this.gameObject);
+        if((--EnterUsages) == 0){ // Usages = -1 should be (nearly) unlimited
+            EnterEvents.RemoveAllListeners();
+            //GameObject.Destroy(this.gameObject);
         }
     }
+
+    void OnTriggerExit(Collider other) {
+        if(ExitUsages == 0){
+            if(EnterUsages == 0)
+                GameObject.Destroy(this.gameObject);
+            return;
+        }
+        if (! other.CompareTag(ExitObjectTag))return;
+        if (GameState != -1 && GameState != (int)StateMachine.Instance.State) return;
+        if(UnityEngine.Random.value > Probability) return;
+
+        for(int i = 0; i < ExitEvents.GetPersistentEventCount(); ++i){
+            if(! (ExitEvents.GetPersistentTarget(i) is GameObject)) continue;
+            GameObject go = (GameObject) ExitEvents.GetPersistentTarget(i);
+            if(! checkFacing(other, FacingDirection, go)) return;
+        }
+        ExitEvents.Invoke();
+        if((--ExitUsages) == 0){ // Usages = -1 should be (nearly) unlimited
+            ExitEvents.RemoveAllListeners();
+        }
+    }
+
+
 
     protected bool checkFacing(Collider other, ColliderFacingDirection dir, GameObject target){
         if(dir == ColliderFacingDirection.DONTCARE) return true;
@@ -74,5 +104,25 @@ public class TrigZone : MonoBehaviour{
         }
         return true;
     }
+
+#if UNITY_EDITOR
+    void OnDrawGizmosSelected(){
+        Gizmos.color = Color.yellow;
+        for(int i = 0; i < EnterEvents.GetPersistentEventCount(); ++i){
+            if(EnterEvents.GetPersistentTarget(i) == null || !(EnterEvents.GetPersistentTarget(i) is GameObject)) continue;
+            GameObject go = (GameObject) EnterEvents.GetPersistentTarget(i);
+            //Handles.DrawLine (this.transform.position, l.transform.position);
+            Gizmos.DrawLine (this.transform.position, go.transform.position);
+        }
+        Gizmos.color = Color.blue;
+        for(int i = 0; i < ExitEvents.GetPersistentEventCount(); ++i){
+            if(ExitEvents.GetPersistentTarget(i) == null || !(ExitEvents.GetPersistentTarget(i) is GameObject)) continue;
+            GameObject go = (GameObject) ExitEvents.GetPersistentTarget(i);
+            //Handles.DrawLine (this.transform.position, l.transform.position);
+            Gizmos.DrawLine (this.transform.position, go.transform.position);
+        }
+
+    }
+#endif
 
 }

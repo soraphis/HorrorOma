@@ -8,15 +8,13 @@ namespace Assets.Scripts
 {
     class FrontDoor : MonoBehaviour, IViewOver
     {
-        public FrontDoorTrigger Trigger= null;
-
         private Vector3 boxStartPosition;
 
         public void fireAction()
         {
             if(StateMachine.Instance.State == GameState.FindBox01) { 
 
-                if (!Trigger.IsBoxWithinCollider) return;
+                if (!StateMachine.Instance.State1_BoxAtFrontDoor) return;
 
                 var kiste = GameObject.FindWithTag("Kiste");
                 kiste.transform.localPosition = boxStartPosition;

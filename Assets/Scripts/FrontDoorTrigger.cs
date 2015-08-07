@@ -1,27 +1,30 @@
 ﻿using System;
+using UnityEditorInternal;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
     class FrontDoorTrigger : MonoBehaviour
     {
-        public bool IsBoxWithinCollider { get; private set; }
-
-        private void OnEnable()
-        {
-            IsBoxWithinCollider = false;
-        }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.gameObject.tag.Equals("Kiste")) return;
-            IsBoxWithinCollider = true;
+            if (StateMachine.Instance.State == GameState.FindBox01)
+            {
+                if (!other.gameObject.tag.Equals("Kiste")) return;
+                StateMachine.Instance.State1_BoxAtFrontDoor = true;
+            }
+
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (!other.gameObject.tag.Equals("Kiste")) return;
-            IsBoxWithinCollider = false;
+            if (StateMachine.Instance.State == GameState.FindBox01)
+            {
+                if (!other.gameObject.tag.Equals("Kiste")) return;
+                StateMachine.Instance.State1_BoxAtFrontDoor = false;
+            }
+
         }
     }
 }

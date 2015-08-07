@@ -31,7 +31,7 @@ public class DoorOpen : MonoBehaviour{
 
     public bool Open{
         get{ return open; }
-        private set{ open = value; }
+        private set{ open = value; if(open) locked = false; }
     }
 
     public void Trigger(){
@@ -66,7 +66,7 @@ public class DoorOpen : MonoBehaviour{
 	 * Closes/Openes door without animation
 	 */
     public void ForceSet(bool open){
-        this.open = open;
+        Open = open;
         Quaternion doorNew = this.open ? openedRotation
         	: closedRotation;
         parent.transform.rotation = doorNew;
@@ -75,13 +75,18 @@ public class DoorOpen : MonoBehaviour{
         time = 0.0f;
     }
 
+    // helper function for unityevents
+    public void Lock(bool doorlocked){
+		this.locked = doorlocked;
+    }
+
 	void Update () {
 		if(sleep) return;
-		Quaternion doorNew = open ? openedRotation
+		Quaternion doorNew = Open ? openedRotation
 			: closedRotation;
 
 		float angle = Quaternion.Angle (startRotation, doorNew);
-		if (open && closed) {
+		if (Open && closed) {
 			if(dooropen != null && ! audioSource.isPlaying){
 				audioSource.PlayOneShot(dooropen);
 			}
@@ -91,7 +96,7 @@ public class DoorOpen : MonoBehaviour{
 		float f = time/(OPENTIME - OPENTIME * (1.001f - angle/80f));
 		parent.transform.rotation = Quaternion.Slerp (startRotation, doorNew, f);
 		if(f >= 0.9){
-			if(!open & !closed){
+			if(!Open & !closed){
 			closed = true;
 			if(doorclose != null && ! audioSource.isPlaying){
 				audioSource.PlayOneShot(doorclose);

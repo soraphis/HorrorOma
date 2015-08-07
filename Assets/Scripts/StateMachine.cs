@@ -21,6 +21,7 @@ public class StateMachine {
 
     	// true on first box pickup
     public bool State1_BoxFound = false;
+    public bool State1_BoxAtFrontDoor = false;
     	// true on first box pickup after replacement
     public bool State2_BoxFound = false;
 

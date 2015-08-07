@@ -17,8 +17,8 @@ public class Fuse : MonoBehaviour {
 			return _powered;
 		}
 		set {
-			_powered = value & PowerAble;
-			toggleItems();
+			_powered = value;
+			RefreshItems();
 		}
 	}
 
@@ -48,18 +48,18 @@ public class Fuse : MonoBehaviour {
 	public GameObject[] Lights = null;
 
 
-	private void toggleItems()
+	public void RefreshItems()
 	{
         foreach (var myGameObject in Lights)
 		{
 			// each lightsorce (pointlight, spotlight, ...)
 			foreach (var myLight in myGameObject.GetComponentsInChildren<Light>(true))
 			{
-				myLight.enabled = _powered;
+				myLight.enabled = _powered & PowerAble;
 
 			}
 			foreach(LightFlicker flicker in myGameObject.GetComponentsInChildren<LightFlicker>(true)){
-				flicker.enabled = _powered;
+				flicker.enabled = _powered & PowerAble;
 			}
 
 			Transform birne = myGameObject.transform.FindChild("birne");
@@ -89,7 +89,7 @@ public class Fuse : MonoBehaviour {
 	    }
 	    else
 	    {
-	        toggleItems();
+	        RefreshItems();
 	    }
 	}
 
@@ -103,6 +103,7 @@ public class Fuse : MonoBehaviour {
 			}
 		}
 	}
+
 #endif
 
 }
