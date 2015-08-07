@@ -1,6 +1,8 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using com.spacepuppyeditor.Inspectors;
 
 public class TrigZone : MonoBehaviour{
 
@@ -13,26 +15,31 @@ public class TrigZone : MonoBehaviour{
 
     }
 
-    public int Usages = 1;
+    public int Usages = 1; // -1 is unlimited
 
     [Range(0.0f, 1.0f)]
     public float Probability = 0.1f;
 
     public ColliderFacingDirection FacingDirection = ColliderFacingDirection.DONTCARE;
+    public TriggerZoneEvent EnterEvents;
+    [TagSelectorAttribute]
+    public String EnterObjectTag = "Player";
 
-    public TriggerZoneEvent events;
+    public TriggerZoneEvent ExitEvents;
+    [TagSelectorAttribute]
+    public String ExitObjectTag = "Player";
 
     void OnTriggerEnter(Collider other) {
-        if (! other.CompareTag("Player")) { return; }
+        if (! other.CompareTag(EnterObjectTag)) { return; }
         if(UnityEngine.Random.value > Probability) return;
 
-        for(int i = 0; i < events.GetPersistentEventCount(); ++i){
-            if(! (events.GetPersistentTarget(i) is GameObject)) continue;
-            GameObject go = (GameObject) events.GetPersistentTarget(i);
+        for(int i = 0; i < EnterEvents.GetPersistentEventCount(); ++i){
+            if(! (EnterEvents.GetPersistentTarget(i) is GameObject)) continue;
+            GameObject go = (GameObject) EnterEvents.GetPersistentTarget(i);
             if(! checkFacing(other, FacingDirection, go)) return;
         }
-        events.Invoke();
-        if((--Usages) <= 0){
+        EnterEvents.Invoke();
+        if((--Usages) == 0){ // Usages = -1 should be (nearly) unlimited
             GameObject.Destroy(this.gameObject);
         }
     }

@@ -6,9 +6,12 @@
 # imported asset store assets
 [Aa]ssets/Standard\ Assets
 [Aa]ssets/ProCore
-[Aa]ssets/Editor
+[Aa]ssets/Editor/*
 [Aa]ssets/GameAssets
 [Aa]ssets/DecalSystem
+
+![Aa]ssets/Editor/EditorTools.cs
+![Aa]ssets/Editor/AlphaNumericSort.cs
 
 # Visual Studio Plugins
 Assets/UnityVS/*
