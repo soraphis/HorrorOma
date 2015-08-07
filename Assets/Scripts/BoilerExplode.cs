@@ -14,7 +14,6 @@ public class BoilerExplode : MonoBehaviour {
 			countDown -= Time.deltaTime;
 			if (countDown <= 0) {
 				Debug.Log ("EXPLOSION");
-				gameObject.SendMessage("DamageRequest");
 				GetComponentInChildren<AudioSource>().Play();
 				StateMachine.Instance.State = GameState.WaterRises05;
 
