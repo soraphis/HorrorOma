@@ -14,10 +14,8 @@ public class BoxGameStateController : MonoBehaviour , IViewOver
     {
         if (StateMachine.Instance.State == GameState.FindBox01){
             StateMachine.Instance.State1_BoxFound = true;
-            Debug.Log("a");
         }else if (StateMachine.Instance.State == GameState.FindBoxAgain02){
             StateMachine.Instance.State2_BoxFound = true;
-            Debug.Log("b");
             Destroy(this);
         }
     }
