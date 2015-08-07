@@ -33,6 +33,8 @@ public class WaterSystem : MonoBehaviour {
     private float MaxHeight;
     private float WaterBaseHeight;
 
+    public bool WaterElectrified = false;
+
     void Awake(){
         WaterSystem.instance = this;
     }

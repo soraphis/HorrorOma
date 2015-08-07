@@ -85,5 +85,13 @@ namespace Assets.Scripts
             //}
             gameOverImage = canvas.transform.Find("ImageForWinOrLose").GetComponent<Image>();
         }
+
+        public enum DeathType{
+            EXPLOSION, HEARTHATTACK, DROWNING, ELECTRIFICATION
+        }
+
+        public void Kill(DeathType By) {
+
+        }
     }
 }

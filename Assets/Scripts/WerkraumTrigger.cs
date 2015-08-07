@@ -24,10 +24,18 @@ namespace Assets.Scripts
 
                 foreach (var gameObj in ActivateGameObjects)
                 {
+                    if(gameObj == null){
+                        Debug.Log("GameObject reference is null");
+                        continue;
+                    }
                     gameObj.SetActive(true);
                 }
                 foreach (var gameObj in DeactivateGameObjects)
                 {
+                    if(gameObj == null){
+                        Debug.Log("GameObject reference is null");
+                        continue;
+                    }
                     gameObj.SetActive(false);
                 }
 
