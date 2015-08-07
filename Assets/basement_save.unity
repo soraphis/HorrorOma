@@ -23290,7 +23290,7 @@ MonoBehaviour:
   WaterIncrease1Amount: 2
   WaterIncrease2: 0
   WaterIncrease2Amount: 4
-  WaterDecrease: 0
+  WaterDecrease: 1
   WaterOverDrain: 0
   WaterDecreaseAmount: 6
   MaxLitre: 600
