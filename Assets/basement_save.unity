@@ -29228,10 +29228,10 @@ MonoBehaviour:
   WaterIncrease1: 0
   WaterIncrease1Amount: 2
   WaterIncrease2: 0
-  WaterIncrease2Amount: 4
+  WaterIncrease2Amount: 6
   WaterDecrease: 1
   WaterOverDrain: 0
-  WaterDecreaseAmount: 6
+  WaterDecreaseAmount: 4
   MaxLitre: 600
   AreaOverLitre:
     serializedVersion: 2

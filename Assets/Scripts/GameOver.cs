@@ -34,23 +34,6 @@ namespace Assets.Scripts
 
         void Update()
         {
-            // Tod per ertrinken
-            if (StateMachine.Instance.State == GameState.WaterRises05)
-            {
-                if (Water.position.y >= GameObject.FindGameObjectWithTag("MainCamera").transform.position.y)
-                {
-                    ShowDeathScreen(TotErtrunkenSprite);
-                }
-            }
-
-            // Tod per Elektroshock
-            if (StateMachine.Instance.State == GameState.WaterBoiler04)
-            {
-                if (Water.position.y >= 0.90f)
-                {
-                    ShowDeathScreen(TotStromSprite);
-                }
-            }
         }
 
         private void ExplosionNow(GameState oldState, GameState newState)
@@ -60,7 +43,7 @@ namespace Assets.Scripts
             // Tod per Explosion
             if (Vector3.Distance(player.position, Boiler.position) <= 10f)
             {
-                ShowDeathScreen(TotExplosionSprite);
+                Kill(DeathType.EXPLOSION);
             }
         }
 
@@ -91,7 +74,18 @@ namespace Assets.Scripts
         }
 
         public void Kill(DeathType By) {
-
+            switch (By){
+                case(DeathType.ELECTRIFICATION):
+                    ShowDeathScreen(TotStromSprite);
+                break;
+                case(DeathType.EXPLOSION):
+                    ShowDeathScreen(TotExplosionSprite);
+                break;
+                // FIXME! - add more
+                default:
+                    ShowDeathScreen(TotErtrunkenSprite);
+                break;
+            }
         }
     }
 }
