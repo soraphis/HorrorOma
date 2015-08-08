@@ -176,7 +176,7 @@ using UnityStandardAssets.Characters.FirstPerson;
             // excluding sound at index 0
             AudioClip [] arr = this.WaterSteps ? this.m_WaterFootstepSounds : this.m_FootstepSounds;
 
-            int n = Random.Range(1, arr.Length);
+            int n = Random.Range(0, arr.Length);
             m_AudioSource.clip = arr[n];
             m_AudioSource.PlayOneShot(m_AudioSource.clip);
             // move picked sound to index 0 so it's not picked next time
