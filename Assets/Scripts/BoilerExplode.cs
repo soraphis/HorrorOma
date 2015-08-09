@@ -1,6 +1,8 @@
 ﻿using Assets.Scripts;
 using System.Collections;
+#if UNITY_EDITOR
 using UnityEditor;
+    #endif
 using UnityEngine;
 
 public class BoilerExplode : MonoBehaviour {
