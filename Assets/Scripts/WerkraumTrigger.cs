@@ -17,9 +17,9 @@ namespace Assets.Scripts
 
         private void OnTriggerEnter(Collider other)
         {
-            if (StateMachine.Instance.State == GameState.FindeWerkzeuge03)
+            if (StateMachine.Instance.State == GameState.FindeWerkzeuge02)
             {
-                StateMachine.Instance.State = GameState.WaterBoiler04;
+                StateMachine.Instance.State = GameState.WaterBoiler03;
                 flashImage.color = Color.white; // alpha should be 1
 
                 foreach (var gameObj in ActivateGameObjects)

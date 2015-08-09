@@ -14,6 +14,7 @@ public class LightFlicker : MonoBehaviour {
 	void Start () {
 		mylight = this.GetComponent<Light>();
         audioSource = this.GetComponentInChildren<AudioSource>();
+        t = Random.value * 10;
 	}
 	
 	// Update is called once per frame
@@ -28,13 +29,13 @@ public class LightFlicker : MonoBehaviour {
                     audioSource.Play();
 					StartCoroutine(flickerOut());
 					t = Random.Range(1.3f, 2.8f);
-					rend.material.SetColor("_EmissionColor", Color.white*0.8f);
+					//rend.material.SetColor("_EmissionColor", Color.white*0.8f);
 				}
 				else{
 					this.mylight.enabled = true;
 					forced = false;
 					t = Random.Range(4.3f, 6.8f);
-					rend.material.SetColor("_EmissionColor", Color.white*0f);
+					//rend.material.SetColor("_EmissionColor", Color.white*0f);
 				}
 			}
 		}
@@ -51,9 +52,10 @@ public class LightFlicker : MonoBehaviour {
 
 	// turns the light off
 	public void ForceFlicker(float seconds){
-		flickerOut();
 		forced = true;
 		t = seconds;
+        audioSource.Play();
+        StartCoroutine(flickerOut());
 	}
 
 	private IEnumerator flickerOut(){
@@ -61,9 +63,9 @@ public class LightFlicker : MonoBehaviour {
 		Renderer rend = birne.GetComponent<Renderer> ();
 
 
-		this.mylight.enabled = false;
-		rend.material.SetColor("_EmissionColor", Color.white*0f);
-		for(int i = 0; i < Random.Range(8, 14); ++i){
+		this.mylight.enabled = true;
+		//rend.material.SetColor("_EmissionColor", Color.white*0f);
+		for(int i = 0; i < Random.Range(8, 12); ++i){
 			this.mylight.enabled = !this.mylight.enabled;
 
 			if(this.mylight.enabled){

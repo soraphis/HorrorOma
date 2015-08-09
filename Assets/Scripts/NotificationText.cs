@@ -18,7 +18,7 @@ public class NotificationText{
         str.GetComponent<EventHandler>().OnDestroyCallback += () => { notes.Remove(str); Rearrange(); };
         notes.Add(str);
         Rearrange();
-        UnityEngine.Object.Destroy(str, 1);
+        UnityEngine.Object.Destroy(str, 3);
         
     }
 

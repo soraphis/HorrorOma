@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,21 +11,34 @@ namespace Assets.Scripts
     {
         private Vector3 boxStartPosition;
 
+        [SerializeField] private GameObject FrontDoorLight;
+
         public void fireAction()
         {
-            if(StateMachine.Instance.State == GameState.FindBox01) { 
+            if(StateMachine.Instance.State == GameState.FindBox00) {
 
                 if (!StateMachine.Instance.State1_BoxAtFrontDoor) return;
 
-                var kiste = GameObject.FindWithTag("Kiste");
-                kiste.transform.localPosition = boxStartPosition;
+                StartCoroutine(DisplayceBox());
 
-                StateMachine.Instance.State = GameState.FindBoxAgain02;
+                StateMachine.Instance.State = GameState.FindBoxAgain01;
             }
         }
 
         public void fireSelect()
         {
+
+        }
+
+        IEnumerator DisplayceBox(){
+            var kiste = GameObject.FindWithTag("Kiste");
+            LightFlicker lf;
+            if( FrontDoorLight != null){
+                lf = FrontDoorLight.GetComponent<LightFlicker>();
+                lf.ForceFlicker(2);
+            }
+            yield return new WaitForSeconds(1.4f);
+            kiste.transform.localPosition = boxStartPosition;
 
         }
 

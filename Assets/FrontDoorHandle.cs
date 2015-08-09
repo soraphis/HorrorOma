@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class FrontDoorHandle : MonoBehaviour, IViewOver {
@@ -12,7 +11,7 @@ public class FrontDoorHandle : MonoBehaviour, IViewOver {
 
     public void fireAction ()
     {
-        if(StateMachine.Instance.State == GameState.FindBox01 || !StateMachine.Instance.State2_BoxFound)
+        if(StateMachine.Instance.State == GameState.FindBox00 || !StateMachine.Instance.State2_BoxFound)
             NotificationText.SimpleScreenText("(Ich sollte den Keller nicht ohne Kiste verlassen)");
         else
             NotificationText.SimpleScreenText("(Die Tür ist verschraubt, ich muss sie irgendwie öffnen)");

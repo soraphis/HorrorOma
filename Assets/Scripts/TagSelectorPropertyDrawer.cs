@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
@@ -61,3 +62,4 @@ namespace com.spacepuppyeditor.Inspectors
     }
 
 }
+#endif

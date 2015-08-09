@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class BoxGameStateController : MonoBehaviour , IViewOver
@@ -12,9 +11,9 @@ public class BoxGameStateController : MonoBehaviour , IViewOver
 
     public void fireAction ()
     {
-        if (StateMachine.Instance.State == GameState.FindBox01){
+        if (StateMachine.Instance.State == GameState.FindBox00){
             StateMachine.Instance.State1_BoxFound = true;
-        }else if (StateMachine.Instance.State == GameState.FindBoxAgain02){
+        }else if (StateMachine.Instance.State == GameState.FindBoxAgain01){
             StateMachine.Instance.State2_BoxFound = true;
             Destroy(this);
         }

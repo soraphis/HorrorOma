@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 // Use this for initialization
 class LightKnockOut : MonoBehaviour, IViewOver
 {
@@ -15,7 +17,7 @@ class LightKnockOut : MonoBehaviour, IViewOver
 			fuse.PowerAble = !fuse.PowerAble;
             fuse.RefreshItems();
 		}
-        if (StateMachine.Instance.State == GameState.WaterBoiler04){
+        if (StateMachine.Instance.State == GameState.WaterBoiler03){
             GetComponent<AudioSource>().Play();
             if(Boiler != null)
                 Boiler.GetComponent<BoilerExplode>().Sleep = false;

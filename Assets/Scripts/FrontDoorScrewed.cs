@@ -14,7 +14,7 @@ namespace Assets.Scripts
 
         void OnTriggerEnter(Collider other)
         {
-            if (StateMachine.Instance.State != GameState.FindBoxAgain02 || Player.instance.inhand != Player.instance.BOX)
+            if (StateMachine.Instance.State != GameState.FindBoxAgain01 || Player.instance.inhand != Player.instance.BOX)
                 return;
 
             DoorOpen d = FrontDoor.GetComponentInChildren<DoorOpen>();
@@ -27,7 +27,7 @@ namespace Assets.Scripts
                 holzbrett.SetActive(true);
             }
 
-            StateMachine.Instance.State = GameState.FindeWerkzeuge03;
+            StateMachine.Instance.State = GameState.FindeWerkzeuge02;
             Destroy(gameObject);
         }
     }

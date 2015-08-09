@@ -2,12 +2,12 @@
 using System.Collections;
 
 public enum GameState{
-	FindBox01,
-    FindBoxAgain02,
-    FindeWerkzeuge03,
-    WaterBoiler04,
-	WaterRises05,
-	WaterDrops06
+	FindBox00,
+	FindBoxAgain01,
+	FindeWerkzeuge02,
+	WaterBoiler03,
+	WaterRises04,
+	SearchExit05
 }
 
 
@@ -40,7 +40,8 @@ public class StateMachine {
 	public static StateMachine Instance{
 		get{
 			if(_instance == null) {
-			    StateMachine._instance = new StateMachine {State = GameState.FindBox01};
+			    StateMachine._instance = new StateMachine {State = GameState.FindBox00
+				};
 			}
             return StateMachine._instance;
 		}

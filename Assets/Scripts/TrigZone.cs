@@ -1,9 +1,11 @@
 using System;
+using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditorInternal;
-using UnityEngine;
-using UnityEngine.UI;
 using com.spacepuppyeditor.Inspectors;
+#endif
+using UnityEngine.UI;
 
 public class TrigZone : MonoBehaviour{
 
@@ -26,11 +28,15 @@ public class TrigZone : MonoBehaviour{
     public int GameState = -1;
 
     public TriggerZoneEvent EnterEvents;
+    #if UNITY_EDITOR
     [TagSelectorAttribute]
+    #endif
     public String EnterObjectTag = "Player";
 
     public TriggerZoneEvent ExitEvents;
+    #if UNITY_EDITOR
     [TagSelectorAttribute]
+    #endif
     public String ExitObjectTag = "Player";
 
     void OnTriggerEnter(Collider other) {

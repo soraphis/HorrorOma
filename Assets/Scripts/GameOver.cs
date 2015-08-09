@@ -38,7 +38,7 @@ namespace Assets.Scripts
 
         private void ExplosionNow(GameState oldState, GameState newState)
         {
-            if (newState != GameState.WaterRises05) return;
+            if (newState != GameState.WaterRises04) return;
 
             // Tod per Explosion
             if (Vector3.Distance(player.position, Boiler.position) <= 10f)
