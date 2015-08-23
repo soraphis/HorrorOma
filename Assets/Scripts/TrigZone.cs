@@ -23,6 +23,8 @@ public class TrigZone : MonoBehaviour{
 
     [Range(0.0f, 1.0f)]
     public float Probability = 0.1f;
+	public bool UseOneProbability = false;
+	private float diceSave = 0;
 
     public ColliderFacingDirection FacingDirection = ColliderFacingDirection.DONTCARE;
     public int GameState = -1;
@@ -43,7 +45,8 @@ public class TrigZone : MonoBehaviour{
         if(EnterUsages == 0) return;
         if (! other.CompareTag(EnterObjectTag))return;
         if (GameState != -1 && GameState != (int)StateMachine.Instance.State) return;
-        if(UnityEngine.Random.value > Probability) return;
+		this.diceSave = UnityEngine.Random.value;
+		if(diceSave > Probability) return;
 
         for(int i = 0; i < EnterEvents.GetPersistentEventCount(); ++i){
             if(! (EnterEvents.GetPersistentTarget(i) is GameObject)) continue;
@@ -65,7 +68,8 @@ public class TrigZone : MonoBehaviour{
         }
         if (! other.CompareTag(ExitObjectTag))return;
         if (GameState != -1 && GameState != (int)StateMachine.Instance.State) return;
-        if(UnityEngine.Random.value > Probability) return;
+		float odds = UseOneProbability ? diceSave : UnityEngine.Random.value;
+        if(odds > Probability) return;
 
         for(int i = 0; i < ExitEvents.GetPersistentEventCount(); ++i){
             if(! (ExitEvents.GetPersistentTarget(i) is GameObject)) continue;
