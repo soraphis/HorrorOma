@@ -12,6 +12,7 @@ namespace Assets.Scripts
         private Vector3 boxStartPosition;
 
         [SerializeField] private GameObject FrontDoorLight;
+		[SerializeField] private DoodadExchange doodadExchange = null;
 
         public void fireAction()
         {
@@ -22,6 +23,8 @@ namespace Assets.Scripts
                 StartCoroutine(DisplayceBox());
 
                 StateMachine.Instance.State = GameState.FindBoxAgain01;
+				doodadExchange.Exchange(2);
+				doodadExchange.AddDecalLayer(2);
             }
         }
 

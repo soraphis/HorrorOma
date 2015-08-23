@@ -13,6 +13,7 @@ namespace Assets.Scripts
         public GameObject[] ActivateGameObjects = null;
         public GameObject[] DeactivateGameObjects = null;
         private Image flashImage;
+		[SerializeField] private DoodadExchange doodadExchange = null;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -39,11 +40,14 @@ namespace Assets.Scripts
                 }
 
                 StartCoroutine(FlashScreen());
+				doodadExchange.Exchange(3);
+				doodadExchange.AddDecalLayer(3);
                 WaterSystem.instance.WaterIncrease1 = true;
             }
         }
 
         private IEnumerator FlashScreen(){
+			GameObject.FindGameObjectWithTag ("Player").GetComponent<FPController> ().enabled = false;
             Color c = flashImage.color;
             for(float f = 1f; f >= 0; f -= 0.5f * Time.deltaTime){
                 c.a = f;
@@ -52,6 +56,7 @@ namespace Assets.Scripts
             }
             c.a = 0;
             flashImage.color = c;
+			GameObject.FindGameObjectWithTag ("Player").GetComponent<FPController> ().enabled = true;
             GameObject.Destroy(this); // this should be the last things, this script does
         }
 

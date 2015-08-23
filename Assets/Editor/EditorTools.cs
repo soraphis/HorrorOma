@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class EditorTools : Editor{
 
+	[MenuItem("Custom/Set Decal Layer")]
+	static void DecalFix(){
+		Decal [] all = (Decal[])FindObjectsOfType(typeof(Decal));
+		foreach (Decal d in all) {
+			d.affectedLayers = 1 << 5;
+		}
+	}
+
+
     [MenuItem("Custom/Load Scene Additive")]
     static void Apply(){
         String scenepath = AssetDatabase.GetAssetOrScenePath(Selection.activeObject);

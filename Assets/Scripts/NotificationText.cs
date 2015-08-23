@@ -9,7 +9,12 @@ public class NotificationText{
     private static GameObject TextPrefab = (GameObject)Resources.Load("Prefabs/Text");
     private static List<GameObject> notes = new List<GameObject>();
     
-    public static void SimpleScreenText(String text){
+	public static void SimpleScreenText(String text){
+		SimpleScreenText (text, 3.0f);
+	}
+
+
+    public static void SimpleScreenText(String text, float seconds){
         GameObject canvas = GameObject.FindGameObjectWithTag("UICanvas");
         GameObject str = UnityEngine.Object.Instantiate(TextPrefab);
 		str.transform.SetParent(canvas.transform);
@@ -18,7 +23,7 @@ public class NotificationText{
         str.GetComponent<EventHandler>().OnDestroyCallback += () => { notes.Remove(str); Rearrange(); };
         notes.Add(str);
         Rearrange();
-        UnityEngine.Object.Destroy(str, 3);
+        UnityEngine.Object.Destroy(str, seconds);
         
     }
 
