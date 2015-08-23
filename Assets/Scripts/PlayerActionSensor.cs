@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerActionSensor : MonoBehaviour {
 
 	public float PlayerActionRange = 2.0f;
-
+	private int layermask = ~(Physics.kIgnoreRaycastLayer | 1 << 4 | 1 << 8);
 	public GameObject Selected {
 		private set; get;
 	}
@@ -13,7 +13,8 @@ public class PlayerActionSensor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		Debug.Log (System.Convert.ToString(layermask, 2));
+		Debug.Log (System.Convert.ToString(~layermask, 2));
 	}
 	
 	// Update is called once per frame
@@ -24,10 +25,14 @@ public class PlayerActionSensor : MonoBehaviour {
 		Ray ray = Camera.main.ScreenPointToRay (new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
 
 		GameObject newselect = null;
-		if (Physics.Raycast (ray, out hit)) {
-			if(hit.distance < PlayerActionRange){
+
+
+
+		if (Physics.Raycast (ray, out hit, PlayerActionRange, layermask)) {
+			//if(hit.distance < PlayerActionRange){
+				NotificationText.SimpleScreenText(hit.collider.name, 0.1f);
 				TriggerObject(hit.collider, out newselect);
-			}
+			//}
 		}
 
 		if (this.Selected != newselect) {
@@ -87,7 +92,7 @@ public class PlayerActionSensor : MonoBehaviour {
 		newselect = null;
 		if (other.gameObject.layer == 8 // world
          || other.gameObject.layer == 9 // decals
-         || other.gameObject.layer == 4 // water
+        // || other.gameObject.layer == 4 // water
          || other.gameObject.layer == 10) // doodads
             return;
 
