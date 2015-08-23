@@ -84,6 +84,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+Assets/basement/LightmapSnapshot.asset
+Assets/basement/LightmapSnapshot.asset.meta
 Assets/basement_save/LightmapSnapshot.asset
-
 Assets/basement_save/LightmapSnapshot.asset.meta

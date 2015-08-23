@@ -7,12 +7,10 @@ public class MakePictureCreepy : MonoBehaviour {
 	[SerializeField] private float time = 2f;
 	private Renderer renderer;
 
-	[ExecuteInEditMode]
+	// [ExecuteInEditMode]
 	// Use this for initialization
 	void Start () {
 		Transform creepyPic = transform.Find ("PictureCreepy");
-		if (creepyPic == null)
-			return;
 		this.renderer = creepyPic.GetComponent<Renderer> ();
 	}
 	
@@ -22,7 +20,7 @@ public class MakePictureCreepy : MonoBehaviour {
 		Color c = renderer.material.color;
 
 		if (Mathf.Abs(c.a - transparency) > 0.01f) {
-			NotificationText.SimpleScreenText(c.a.ToString(), 0.1f);
+			//NotificationText.SimpleScreenText(c.a.ToString(), 0.1f);
 			c.a += (transparency - (1 - transparency)) * Time.deltaTime / time;
 			c.a = Mathf.Clamp01(c.a);
 			renderer.material.color = c;

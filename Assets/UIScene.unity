@@ -782,10 +782,10 @@ RectTransform:
   - {fileID: 449903065}
   m_Father: {fileID: 1481330554}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -339.29718, y: -10.0420227}
-  m_SizeDelta: {x: 256, y: 694}
+  m_AnchorMin: {x: .5, y: 0}
+  m_AnchorMax: {x: .5, y: 1}
+  m_AnchoredPosition: {x: -316, y: 0}
+  m_SizeDelta: {x: 167, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1030690062
 MonoBehaviour:
@@ -1035,7 +1035,7 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1481330554}
+  - 224: {fileID: 1481330554}
   - 114: {fileID: 1481330555}
   m_Layer: 0
   m_Name: PauseWrapper
@@ -1044,19 +1044,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1481330554
-Transform:
+--- !u!224 &1481330554
+RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1481330553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.7028198, y: 10.0420227, z: -6.25}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1030690061}
   m_Father: {fileID: 828798026}
   m_RootOrder: 3
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
 --- !u!114 &1481330555
 MonoBehaviour:
   m_ObjectHideFlags: 0

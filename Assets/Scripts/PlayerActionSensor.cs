@@ -13,8 +13,7 @@ public class PlayerActionSensor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log (System.Convert.ToString(layermask, 2));
-		Debug.Log (System.Convert.ToString(~layermask, 2));
+
 	}
 	
 	// Update is called once per frame
@@ -30,7 +29,7 @@ public class PlayerActionSensor : MonoBehaviour {
 
 		if (Physics.Raycast (ray, out hit, PlayerActionRange, layermask)) {
 			//if(hit.distance < PlayerActionRange){
-				NotificationText.SimpleScreenText(hit.collider.name, 0.1f);
+				//NotificationText.SimpleScreenText(hit.collider.name, 0.1f);
 				TriggerObject(hit.collider, out newselect);
 			//}
 		}
