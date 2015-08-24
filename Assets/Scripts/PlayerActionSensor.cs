@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerActionSensor : MonoBehaviour {
 
 	public float PlayerActionRange = 2.0f;
-	private int layermask = ~(Physics.kIgnoreRaycastLayer | 1 << 4 | 1 << 8);
+	private int layermask = ~(Physics.kIgnoreRaycastLayer | 1 << 4 | 1 << 8 | 1 << 9 | 1 << 10);
 	public GameObject Selected {
 		private set; get;
 	}
@@ -15,7 +15,7 @@ public class PlayerActionSensor : MonoBehaviour {
 	void Start () {
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -33,6 +33,7 @@ public class PlayerActionSensor : MonoBehaviour {
 				TriggerObject(hit.collider, out newselect);
 			//}
 		}
+
 
 		if (this.Selected != newselect) {
 			Highlighter h;
