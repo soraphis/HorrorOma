@@ -1,5 +1,8 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
+
+
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditorInternal;
@@ -15,7 +18,6 @@ public class TrigZone : MonoBehaviour{
 
     [Serializable]
     public class TriggerZoneEvent : UnityEngine.Events.UnityEvent{
-
     }
 
     public int EnterUsages = 1; // -1 is unlimited
@@ -28,6 +30,8 @@ public class TrigZone : MonoBehaviour{
 
     public ColliderFacingDirection FacingDirection = ColliderFacingDirection.DONTCARE;
     public int GameState = -1;
+
+    [SerializeField] private GameObject targetGameObject = null;
 
     public TriggerZoneEvent EnterEvents;
     #if UNITY_EDITOR
@@ -48,11 +52,8 @@ public class TrigZone : MonoBehaviour{
 		this.diceSave = UnityEngine.Random.value;
 		if(diceSave > Probability) return;
 
-        for(int i = 0; i < EnterEvents.GetPersistentEventCount(); ++i){
-            if(! (EnterEvents.GetPersistentTarget(i) is GameObject)) continue;
-            GameObject go = (GameObject) EnterEvents.GetPersistentTarget(i);
-            if(! checkFacing(other, FacingDirection, go)) return;
-        }
+        if(targetGameObject != null && ! checkFacing(other, FacingDirection, targetGameObject)) return;
+
         EnterEvents.Invoke();
         if((--EnterUsages) == 0){ // Usages = -1 should be (nearly) unlimited
             EnterEvents.RemoveAllListeners();
@@ -71,11 +72,8 @@ public class TrigZone : MonoBehaviour{
 		float odds = UseOneProbability ? diceSave : UnityEngine.Random.value;
         if(odds > Probability) return;
 
-        for(int i = 0; i < ExitEvents.GetPersistentEventCount(); ++i){
-            if(! (ExitEvents.GetPersistentTarget(i) is GameObject)) continue;
-            GameObject go = (GameObject) ExitEvents.GetPersistentTarget(i);
-            if(! checkFacing(other, FacingDirection, go)) return;
-        }
+        if(targetGameObject != null && ! checkFacing(other, FacingDirection, targetGameObject)) return;
+
         ExitEvents.Invoke();
         if((--ExitUsages) == 0){ // Usages = -1 should be (nearly) unlimited
             ExitEvents.RemoveAllListeners();
@@ -89,7 +87,6 @@ public class TrigZone : MonoBehaviour{
 
         Vector3 v = (other.transform.position - target.transform.position).normalized; // direction from player to door
         float f = Vector3.Dot(v, Camera.main.transform.forward); // positive if looking in direction
-
         switch (dir){
             case(ColliderFacingDirection.TARGETBEHIND):
             if(f < 0) return false; // the door could be seen!
@@ -117,6 +114,8 @@ public class TrigZone : MonoBehaviour{
 
 #if UNITY_EDITOR
     void OnDrawGizmosSelected(){
+		var x = EnterEvents.GetType ().GetProperties ();
+
         Gizmos.color = Color.yellow;
         for(int i = 0; i < EnterEvents.GetPersistentEventCount(); ++i){
             if(EnterEvents.GetPersistentTarget(i) == null || !(EnterEvents.GetPersistentTarget(i) is GameObject)) continue;
