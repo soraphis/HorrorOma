@@ -17,6 +17,7 @@ class LightKnockOut : MonoBehaviour, IViewOver
 			fuse.PowerAble = !fuse.PowerAble;
             fuse.RefreshItems();
 		}
+		// nicht gut!
         if (StateMachine.Instance.State == GameState.WaterBoiler03){
             GetComponent<AudioSource>().Play();
             if(Boiler != null)

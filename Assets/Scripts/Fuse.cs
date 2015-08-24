@@ -66,7 +66,7 @@ public class Fuse : MonoBehaviour {
 			if(birne == null) continue;
 			Renderer rend = birne.GetComponent<Renderer>();
 
-			if(_powered){
+			if(_powered & PowerAble){
 				//DynamicGI.SetEmissive(rend, Color.red * 0.8f);
 				rend.material.SetColor("_EmissionColor", Color.white*0.8f);
 				//
