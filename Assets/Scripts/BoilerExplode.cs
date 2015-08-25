@@ -10,6 +10,7 @@ public class BoilerExplode : MonoBehaviour {
     public bool Sleep = true;
 	private float countDown = 15;
 
+    [SerializeField] private GameObject SecretWall;
     [SerializeField] private GameObject Stairs;
     [SerializeField] private GameObject StairsBroken;
 
@@ -30,7 +31,7 @@ public class BoilerExplode : MonoBehaviour {
 			if (countDown <= 0) {
                 Explode();
 			}
-			
+
 		}
 
 	}
@@ -56,6 +57,7 @@ public class BoilerExplode : MonoBehaviour {
 
         Stairs.SetActive(false);
         StairsBroken.SetActive(true);
+        SecretWall.SetActive(false);
         StateMachine.Instance.State = GameState.WaterRises04;
         WaterSystem.instance.WaterIncrease2 = true;
 

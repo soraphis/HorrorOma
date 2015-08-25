@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerActionSensor : MonoBehaviour {
 
 	public float PlayerActionRange = 2.0f;
-	private int layermask = ~(Physics.kIgnoreRaycastLayer | 1 << 4 | 1 << 8 | 1 << 9 | 1 << 10);
+	private int layermask = ~(Physics.kIgnoreRaycastLayer | 1 << 4 | 1 << 9 | 1 << 10);
 	public GameObject Selected {
 		private set; get;
 	}

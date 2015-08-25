@@ -9,7 +9,7 @@ public class DoodadExchange : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 
 	public void AddDecalLayer(int layer){
@@ -18,12 +18,10 @@ public class DoodadExchange : MonoBehaviour {
 			if(room == null) continue;
 
 			Transform layerObj = room.Find(layer.ToString());
-			if(layerObj == null) continue;
-			layerObj.gameObject.SetActive(true);
+			if(layerObj != null) layerObj.gameObject.SetActive(true);
 
-			layerObj = room.Find(layer.ToString()+" off");
-			if(layerObj == null) continue;
-			layerObj.gameObject.SetActive(false);
+			layerObj = room.Find(string.Format("{0} off", layer));
+			if(layerObj != null) layerObj.gameObject.SetActive(false);
 		}
 	}
 
