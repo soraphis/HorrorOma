@@ -8,8 +8,6 @@ public class Pickable {
 	public GameObject handsObject;
 	public GameObject worldObject;
 
-
-
 	/*if (worldObject.activeSelf) {
 		handsObject.SetActive(false);
 	}*/
@@ -25,6 +23,8 @@ public class Pickable {
 	public void PickDrop(){
 		if (handsObject.activeSelf) {
 			Drop ();
+			Physics.IgnoreCollision(this.worldObject.GetComponent<Collider>(),
+									Player.instance.Actor.GetComponent<Collider>());
 		} else {
 			Pick ();
 		}

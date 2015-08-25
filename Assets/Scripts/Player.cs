@@ -14,6 +14,9 @@ public class Player : MonoBehaviour {
 	public GameObject LampLight;
 
 	[HideInInspector]
+	public GameObject Actor;
+
+	[HideInInspector]
 	public Pickable inhand = null;
 
 	public Pickable BOX;
@@ -32,6 +35,7 @@ public class Player : MonoBehaviour {
 
     void Awake(){
         Player.instance = this;
+		StartCoroutine(Load());
     }
 
    	void Start(){
@@ -39,7 +43,7 @@ public class Player : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        StartCoroutine(Load());
+		this.Actor = GameObject.FindGameObjectWithTag("Player");
 
 		if (BOX.worldObject.activeSelf) {
 			BOX.handsObject.SetActive(false);
@@ -58,5 +62,3 @@ public class Player : MonoBehaviour {
 		}
 	}
 }
-
-
