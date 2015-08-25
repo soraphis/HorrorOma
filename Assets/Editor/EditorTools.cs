@@ -12,6 +12,22 @@ public class EditorTools : Editor{
 		}
 	}
 
+	[MenuItem("Custom/Orient On Ground")]
+	static void OrientOnGround(){
+		Transform t = Selection.activeGameObject.transform;
+
+		RaycastHit hit;
+		int layermask = (1 | 1 << 8 | 1 << 10);
+		if(Physics.Raycast(t.position, Vector3.down, out hit, 0.8f, layermask)){
+			RaycastHit hit2;
+			if(Physics.Raycast(hit.point, Vector3.up, out hit2, 0.8f, layermask)){
+				Vector3 pos = t.position;
+				pos.y -= hit2.distance;
+				t.position = pos;
+			}
+		}
+	}
+
 
     [MenuItem("Custom/Load Scene Additive")]
     static void Apply(){
