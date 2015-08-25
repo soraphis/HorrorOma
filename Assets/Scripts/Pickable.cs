@@ -41,6 +41,13 @@ public class Pickable {
 
 		worldObject.transform.position = handsObject.transform.position;
 		worldObject.transform.rotation = handsObject.transform.rotation;
+
+		Rigidbody rb = worldObject.GetComponent<Rigidbody>();
+		if(rb != null){
+			Transform t = Camera.main.transform;
+			rb.AddForce(t.forward * 2.8f, ForceMode.Impulse);
+		}
+
 	}
 
 }

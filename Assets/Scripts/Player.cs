@@ -35,10 +35,10 @@ public class Player : MonoBehaviour {
 
     void Awake(){
         Player.instance = this;
-		StartCoroutine(Load());
     }
 
    	void Start(){
+		StartCoroutine(Load());
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
