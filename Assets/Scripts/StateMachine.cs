@@ -25,12 +25,10 @@ public class StateMachine {
     	// true on first box pickup after replacement
     public bool State2_BoxFound = false;
 
-
-
 	public GameState State{
 		get{ return _state; }
 		set{
-            if (OnStateChanged != null) { 
+            if (OnStateChanged != null) {
 			    OnStateChanged(_state, value);
             }
 			_state = value;
@@ -47,6 +45,9 @@ public class StateMachine {
 		}
 	}
 
+	public static void Reset(){
+		StateMachine._instance = null;
+	}
 
 	protected StateMachine(){}
 

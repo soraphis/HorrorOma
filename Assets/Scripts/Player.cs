@@ -35,6 +35,10 @@ public class Player : MonoBehaviour {
 
     void Awake(){
         Player.instance = this;
+		StateMachine.Reset();
+		onLevelLoad += () => {
+			NotificationText.Initialize();
+		};
     }
 
    	void Start(){

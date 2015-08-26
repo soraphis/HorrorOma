@@ -23,7 +23,7 @@ public class LevelLoader : MonoBehaviour {
 		yield return async;
 		Debug.Log ("level loaded complete");
 	}
-	
+
 	private IEnumerator Load(string name)
 	{
 		async = Application.LoadLevelAsync(name);
@@ -44,12 +44,12 @@ public class LevelLoader : MonoBehaviour {
 		image = ProgressCircle.GetComponent<Image> ();
 		LevelLoader.LoadLevel (1);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (instance.async == null)
 			return;
-		image.fillAmount = instance.async.progress;
+		image.fillAmount = instance.async.progress/0.9f;
 		if(ConditionToLoad){ async.allowSceneActivation = true; }
 
 	}
