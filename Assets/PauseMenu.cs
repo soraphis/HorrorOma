@@ -3,17 +3,25 @@ using System.Collections;
 
 public class PauseMenu : MonoBehaviour {
 
+	[SerializeField] private bool justButtonFunctions = false;
 	private bool isPause = false;
 	private FPController fpsc;
 
 	// Use this for initialization
 	void Start () {
-		fpsc = GameObject.Find ("Akteuer").GetComponent<FPController> ();
+		GameObject acteuer = GameObject.Find ("Akteuer");
+		if (acteuer == null) {
+			justButtonFunctions = true;
+			return;
+		}
+		fpsc = acteuer.GetComponent<FPController> ();
 		Process ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (justButtonFunctions)
+			return;
 		if (! Input.GetButtonDown ("Cancel"))
 			return;
 		Toggle ();
