@@ -63,7 +63,7 @@ namespace Assets.Scripts
 
         void UISceneLoaded(){
             GameObject canvas = GameObject.FindGameObjectWithTag("UICanvas");
-            flashImage = canvas.transform.Find("GamestateObjects/Panel").GetComponent<Image>();
+            flashImage = canvas.transform.Find("GamestateObjects/Flashback").GetComponent<Image>();
             if(flashImage == null){
                 Debug.Log("image not found");
             }

@@ -4,7 +4,7 @@ using System.Collections;
 
 public class LevelLoader : MonoBehaviour {
 
-	static LevelLoader instance;
+	public static LevelLoader instance;
 
 	private AsyncOperation async = null;
 
