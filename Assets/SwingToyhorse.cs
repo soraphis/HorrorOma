@@ -7,7 +7,7 @@ public class SwingToyhorse : MonoBehaviour {
 	private float swingTime = 2.0f; // 2 * pi * sqrt( 1m / 9.81m/s^2) = ~ 2s
 	private const float maximumDeflection = 30f;
 	private const float deflectionReduction = 3f;
-	private float currentDeflection = 10f;
+	private float currentDeflection = 0f;
 	private float timer = 0f;
 
 	// Use this for initialization
@@ -24,10 +24,14 @@ public class SwingToyhorse : MonoBehaviour {
 		rot.x = currentDeflection * Mathf.Cos(Mathf.PI * timer/swingTime);
 		transform.localEulerAngles = rot;
 
+
 	}
 
 	public void deflect(int amount){
-		currentDeflection = Mathf.Clamp(currentDeflection + amount, 0, maximumDeflection);
+		float alpha = ((transform.localEulerAngles.x + 180) % 360) - 180;
+		float oldDeflection = currentDeflection;
+		currentDeflection = Mathf.Clamp (currentDeflection + amount, 0, maximumDeflection);
+		timer = Mathf.Acos (alpha / currentDeflection) * swingTime / Mathf.PI;
 		//StartCoroutine(smoothDeflect(amount));
 	}
 
