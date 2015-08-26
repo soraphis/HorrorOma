@@ -60,7 +60,7 @@ public class BoilerExplode : MonoBehaviour {
         Stairs.SetActive(false);
         StairsBroken.SetActive(true);
         SecretWall.SetActive(false);
-        StateMachine.Instance.State = GameState.WaterRises04;
+        StateMachine.Instance.State = GameState.SearchExit05;
         WaterSystem.instance.WaterIncrease2 = true;
 
         Destroy(this.gameObject); // destroying this gameObject -> stopping all sounds from emiting and all scripts from executing

@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour {
 		GameObject acteuer = GameObject.Find ("Akteuer");
 		if (acteuer == null) {
 			justButtonFunctions = true;
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
 			return;
 		}
 		fpsc = acteuer.GetComponent<FPController> ();

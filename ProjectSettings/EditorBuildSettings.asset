@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/basement.unity
   - enabled: 1
     path: Assets/UIScene.unity
+  - enabled: 1
+    path: Assets/Credits.unity
