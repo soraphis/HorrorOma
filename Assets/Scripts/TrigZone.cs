@@ -114,8 +114,6 @@ public class TrigZone : MonoBehaviour{
 
 #if UNITY_EDITOR
     void OnDrawGizmosSelected(){
-		var x = EnterEvents.GetType ().GetProperties ();
-
         Gizmos.color = Color.yellow;
         for(int i = 0; i < EnterEvents.GetPersistentEventCount(); ++i){
             if(EnterEvents.GetPersistentTarget(i) == null || !(EnterEvents.GetPersistentTarget(i) is GameObject)) continue;

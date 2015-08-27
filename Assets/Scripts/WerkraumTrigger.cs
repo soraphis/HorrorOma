@@ -13,6 +13,7 @@ namespace Assets.Scripts
         public GameObject[] ActivateGameObjects = null;
         public GameObject[] DeactivateGameObjects = null;
         private Image flashImage;
+        [SerializeField] private LightExplode explodingLight = null;
 		[SerializeField] private DoodadExchange doodadExchange = null;
 
         private void OnTriggerEnter(Collider other)
@@ -20,16 +21,10 @@ namespace Assets.Scripts
             if (StateMachine.Instance.State == GameState.FindeWerkzeuge02)
             {
                 StateMachine.Instance.State = GameState.WaterBoiler03;
-                flashImage.color = Color.white; // alpha should be 1
 
-                foreach (var gameObj in ActivateGameObjects)
-                {
-                    if(gameObj == null){
-                        Debug.Log("GameObject reference is null");
-                        continue;
-                    }
-                    gameObj.SetActive(true);
-                }
+                StartCoroutine(FlashScreen());
+
+
                 foreach (var gameObj in DeactivateGameObjects)
                 {
                     if(gameObj == null){
@@ -38,8 +33,6 @@ namespace Assets.Scripts
                     }
                     gameObj.SetActive(false);
                 }
-
-                StartCoroutine(FlashScreen());
 				doodadExchange.Exchange(3);
 				doodadExchange.AddDecalLayer(3);
                 WaterSystem.instance.WaterIncrease1 = true;
@@ -47,15 +40,27 @@ namespace Assets.Scripts
         }
 
         private IEnumerator FlashScreen(){
+            explodingLight.Explode();
+            yield return new WaitForSeconds(0.2f);
 			GameObject.FindGameObjectWithTag ("Player").GetComponent<FPController> ().enabled = false;
+            flashImage.color = Color.white; // alpha should be 1
             Color c = flashImage.color;
-            for(float f = 1f; f >= 0; f -= 0.5f * Time.deltaTime){
+            for(float f = 1f; f >= 0; f -= 0.3f * Time.deltaTime){
                 c.a = f;
                 flashImage.color = c;
-                yield return null;
+                yield return new WaitForSeconds(0.3f * Time.deltaTime);
             }
             c.a = 0;
             flashImage.color = c;
+            yield return new WaitForSeconds(0.3f);
+            foreach (var gameObj in ActivateGameObjects)
+            {
+                if(gameObj == null){
+                    Debug.Log("GameObject reference is null");
+                    continue;
+                }
+                gameObj.SetActive(true);
+            }
 			GameObject.FindGameObjectWithTag ("Player").GetComponent<FPController> ().enabled = true;
             GameObject.Destroy(this); // this should be the last things, this script does
         }

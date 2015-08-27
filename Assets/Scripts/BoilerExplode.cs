@@ -53,7 +53,6 @@ public class BoilerExplode : MonoBehaviour {
 
     // public because there are multiple ways to let it explode
     public void Explode(){
-        Debug.Log ("EXPLOSION"); // TODO: PLAYSOUND
         AudioSource.PlayClipAtPoint(ExplodeClip, transform.position);
         GetComponentInChildren<AudioSource>().Play();
 

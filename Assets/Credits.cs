@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Credits : MonoBehaviour {
 
-	
+
 
 	// Use this for initialization
 	void Start () {
@@ -14,4 +14,6 @@ public class Credits : MonoBehaviour {
 	void Update () {
 
 	}
+
+	
 }

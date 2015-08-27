@@ -2668,9 +2668,9 @@ RectTransform:
   - {fileID: 1252160279}
   m_Father: {fileID: 2024061520}
   m_RootOrder: 1
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -254}
+  m_AnchorMin: {x: .5, y: 0}
+  m_AnchorMax: {x: .5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 20}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .500000477}
 --- !u!114 &1506358430
@@ -3321,11 +3321,11 @@ RectTransform:
   - {fileID: 589555381}
   m_Father: {fileID: 2024061520}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: 0}
-  m_SizeDelta: {x: 100, y: 0}
-  m_Pivot: {x: .5, y: .5}
+  m_AnchorMin: {x: 0, y: .5}
+  m_AnchorMax: {x: 1, y: .5}
+  m_AnchoredPosition: {x: -476, y: 0}
+  m_SizeDelta: {x: -1024, y: 542}
+  m_Pivot: {x: .50000006, y: .5}
 --- !u!212 &1876670811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3761,10 +3761,10 @@ RectTransform:
   - {fileID: 1506358429}
   m_Father: {fileID: 1427899131}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: 0}
-  m_AnchorMax: {x: .5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1124, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!95 &2024061521
 Animator:

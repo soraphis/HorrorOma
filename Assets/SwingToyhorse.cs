@@ -29,10 +29,8 @@ public class SwingToyhorse : MonoBehaviour {
 
 	public void deflect(int amount){
 		float alpha = ((transform.localEulerAngles.x + 180) % 360) - 180;
-		float oldDeflection = currentDeflection;
 		currentDeflection = Mathf.Clamp (currentDeflection + amount, 0, maximumDeflection);
 		timer = Mathf.Acos (alpha / currentDeflection) * swingTime / Mathf.PI;
-		//StartCoroutine(smoothDeflect(amount));
 	}
 
 	private IEnumerator smoothDeflect(int amount){
