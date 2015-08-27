@@ -22,8 +22,10 @@ public class Highlighter : MonoBehaviour {
 		this.rend = this.GetComponent<Renderer> ();
 		defaultShader = this.rend.material.shader;
 
+		if(outlineShader == null)
+			outlineShader = Shader.Find("Custom/Outlined/Silhouetted Diffuse");
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 

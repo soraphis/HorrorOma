@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -21,6 +20,8 @@ public class Player : MonoBehaviour {
 
 	public Pickable BOX;
 	public Pickable LAMP;
+
+	[SerializeField] private GameObject boxSpots;
 
 	private IEnumerator Load(){
         AsyncOperation levelLoader = Application.LoadLevelAdditiveAsync("UIScene");
@@ -50,12 +51,18 @@ public class Player : MonoBehaviour {
 		this.Actor = GameObject.FindGameObjectWithTag("Player");
 
 		if (BOX.worldObject.activeSelf) {
+			Transform t = boxSpots.transform.GetChild((int)((Random.value * 100)%boxSpots.transform.childCount));
+
+			BOX.worldObject.transform.position = t.position;
+
 			BOX.handsObject.SetActive(false);
 		}
 
 		if (LAMP.worldObject.activeSelf) {
 			LAMP.handsObject.SetActive(false);
 		}
+
+
 	}
 
 	void Update(){
