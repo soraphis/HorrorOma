@@ -26,7 +26,9 @@ public class Fuse : MonoBehaviour {
     {
         foreach (Transform child in transform)
         {
+            if(child == null) continue;
             var lightTransform = child.Find("light");
+            if(lightTransform == null) continue;
             if (lightTransform != null)
             {
                 if (powered)
@@ -52,6 +54,7 @@ public class Fuse : MonoBehaviour {
 	{
         foreach (var myGameObject in Lights)
 		{
+            if(myGameObject == null) continue;
 			// each lightsorce (pointlight, spotlight, ...)
 			foreach (var myLight in myGameObject.GetComponentsInChildren<Light>(true))
 			{
@@ -99,7 +102,7 @@ public class Fuse : MonoBehaviour {
 		Gizmos.color = Color.cyan;
 		foreach (var l in Lights) {
 			if(l != null){
-				Gizmos.DrawLine (this.transform.position, l.transform.position);               
+				Gizmos.DrawLine (this.transform.position, l.transform.position);
 			}
 		}
 	}

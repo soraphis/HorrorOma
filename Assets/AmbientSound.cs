@@ -6,7 +6,7 @@ public class AmbientSound : MonoBehaviour {
 	[SerializeField] private AudioClip [] ambientSounds;
 	[SerializeField] private AudioSource ambientSource;
 
-	private const float time = 3f;
+	private const float time = 15f;
 	private float timer = time;
 
 	// Update is called once per frame
