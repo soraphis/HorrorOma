@@ -3,45 +3,21 @@ using System.Collections;
 
 public class AmbientSound : MonoBehaviour {
 	//public AudioSource mainLoop;
-	public AudioSource track_1;
-	public AudioSource track_2;
-	public AudioSource track_3;
+	[SerializeField] private AudioClip [] ambientSounds;
+	[SerializeField] private AudioSource ambientSource;
 
-	private bool playAudio = false;
-	private AudioClip[] clips;
-	private int i;
-	void Start(){
-
-	}
+	private const float time = 3f;
+	private float timer = time;
 
 	// Update is called once per frame
 	void Update () {
-	 	if (!playAudio) {
-			i = Random.Range (1, 3);
-			playSound();
-		}
+	 	timer -= Time.deltaTime;
+		if(timer > 0) return;
+		timer = time;
+		if(ambientSource.isPlaying) return;
+		if(Random.value < 0.8) return;
+		ambientSource.clip = ambientSounds[(int)((Random.value * 100) % ambientSounds.Length)];
+		ambientSource.Play();
 	}
 
-	void playSound(){
-	
-		StartCoroutine ("waitForRandomSeconds");
-	}
-
-	IEnumerator waitForRandomSeconds(){
-		yield return new WaitForSeconds(Random.Range(30,60));
-
-		if (i == 1) {
-			playAudio = true;
-			track_1.Play ();
-		}
-		if (i == 2) {
-			playAudio = true;
-			track_2.Play ();
-		}
-		if (i == 3) {
-			playAudio = true;
-			track_3.Play ();
-		} 
-
-	}
 }
