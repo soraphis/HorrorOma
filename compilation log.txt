@@ -1,0 +1,19 @@
+********************************************************************************
+*                    Thursday, October 22, 2015 1:18:20 PM                     *
+********************************************************************************
+smcs.exe version: 1.4.1.1
+Target assembly: Assembly-CSharp-Editor.dll
+Project directory: D:\Benutzer\Oliver\Dokumente\Unity3D\HorrorOma
+Unity directory: D:/Programme/Unity/Editor/Data
+Compiler: Version3
+
+- Compilation -----------------------------------------------
+
+Process: D:/Programme/Unity/Editor/Data\Mono/bin/mono.exe
+Arguments: "D:/Programme/Unity/Editor/Data\Mono/lib/mono/2.0/gmcs.exe" @Temp/UnityTempFile-d4dc162bfd0fc7f4590fdd29c1dd81de
+Exit code: 0
+Elapsed time: 0.77 sec
+
+- Compiler output:
+
+- Compiler errors:

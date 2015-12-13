@@ -38,8 +38,8 @@ public class DoorOpen : MonoBehaviour{
         if (!open && locked) {
             if(doorlocked != null && ! audioSource.isPlaying){
                 audioSource.PlayOneShot(doorlocked);
-                return;
             }
+            return;
         }
         sleep = false;
         time = 0.0f;

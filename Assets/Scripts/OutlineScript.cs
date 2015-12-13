@@ -1,19 +1,20 @@
 using UnityEngine;
 using System.Collections;
 
+/*
 public class OutlineScript : MonoBehaviour {
 	public GameObject player;
 	public Shader shader1;
     public Shader shader2;
-	public float outlineSize = 0.01f;
+	public float outlineSize = 0.3f;
 	public float distanceToAct = 2;
-	public Color outlineColor = Color.black;
+	public Color outlineColor = Color.red;
 	private bool alreadyNear = false;
 	
 	// Use this for initialization
 	void Start () {
-	shader1 = Shader.Find("Diffuse");
-    shader2 = Shader.Find("Outlined/Silhouetted Diffuse");
+	shader1 = Shader.Find("Standard");
+    shader2 = Shader.Find("Standard Outlined");
 	}
 	
 	// Update is called once per frame
@@ -32,3 +33,4 @@ public class OutlineScript : MonoBehaviour {
 		}
 	}
 }
+*/

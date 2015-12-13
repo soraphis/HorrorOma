@@ -62,8 +62,8 @@ public class Player : MonoBehaviour {
 			LAMP.handsObject.SetActive(false);
 		}
 
-
-	}
+        Camera.main.clearStencilAfterLightingPass = true;
+    }
 
 	void Update(){
 		if (LAMP.worldObject.activeSelf) {
