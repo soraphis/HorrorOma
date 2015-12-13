@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerActionSensor : MonoBehaviour {
 
 	public float PlayerActionRange = 2.0f;
-	private int layermask = ~(Physics.kIgnoreRaycastLayer | 1 << 4 | 1 << 9);
+	private int layermask = ~(Physics.IgnoreRaycastLayer | 1 << 4 | 1 << 9);
 	public GameObject Selected {
 		private set; get;
 	}
@@ -40,7 +40,7 @@ public class PlayerActionSensor : MonoBehaviour {
 			if(this.Selected != null){
 				h = this.Selected.GetComponent<Highlighter> ();
 				if(h != null) {
-					h.highlighted = false;
+					h.HighlightToggle(false);
                     GameObject.FindGameObjectWithTag("UICanvas").GetComponentInChildren<UISelector>().Visible = false;
 				}
 			}
@@ -48,7 +48,7 @@ public class PlayerActionSensor : MonoBehaviour {
 			if(newselect != null){
 				h = newselect.GetComponent<Highlighter> ();
 				if(h != null){
-                    h.highlighted = true;
+                    h.HighlightToggle(true);
                     GameObject.FindGameObjectWithTag("UICanvas").GetComponentInChildren<UISelector>().Visible = true;
                 }
 			}

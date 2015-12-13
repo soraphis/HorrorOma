@@ -16,8 +16,7 @@ namespace Assets.Scripts
 
         public void fireAction()
         {
-            if(StateMachine.Instance.State == GameState.FindBox00) {
-
+            if (StateMachine.Instance.State == GameState.FindBox00) {
                 if (!StateMachine.Instance.State1_BoxAtFrontDoor) return;
 
                 StartCoroutine(DisplayceBox());

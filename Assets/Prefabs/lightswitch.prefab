@@ -46,8 +46,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 108588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.16072309, y: 16.2019806, z: -15.7024593}
-  m_LocalScale: {x: .100000001, y: .300000012, z: .300000012}
+  m_LocalPosition: {x: 6.735, y: 8.889059, z: -5.978746}
+  m_LocalScale: {x: 0.1, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 455350}
   m_Father: {fileID: 0}
@@ -59,8 +59,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .442999989, y: 0, z: .347000003}
-  m_LocalScale: {x: -.414728731, y: .727706432, z: .0664445087}
+  m_LocalPosition: {x: 0.443, y: 0, z: 0.347}
+  m_LocalScale: {x: -0.41472873, y: 0.72770643, z: 0.06644451}
   m_Children: []
   m_Father: {fileID: 412438}
   m_RootOrder: 0
@@ -82,8 +82,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -106,8 +108,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -165,6 +169,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -189,6 +194,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -199,6 +205,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -209,6 +216,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -219,6 +227,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &11431094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,10 +252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f90bf0cd93b32548ab43e0bf07cddaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineShader: {fileID: 4800000, guid: d2ff2411abd05894292164df8fffe45f, type: 3}
+  outlineShader: {fileID: 4800000, guid: 5eb804427ae04034a8947f6439976ed3, type: 3}
   defaultShader: {fileID: 0}
-  outlineSize: .000500000024
-  outlineColor: {r: 1, g: .666670024, b: 0, a: 1}
+  outlineSize: 0.0005
+  outlineColor: {r: 1, g: 0.66667, b: 0, a: 1}
   Player: {fileID: 0}
   highlighted: 0
 --- !u!1001 &100100000
