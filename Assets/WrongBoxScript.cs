@@ -18,6 +18,10 @@ public class WrongBoxScript : MonoBehaviour, IViewOver {
 
 	#endregion
 
+    public void ChangeMessage(string msg) {
+        errorMessage = msg;
+    }
+
 	void Start(){
 		if(GetComponent<Highlighter>() == null){
 			gameObject.AddComponent<Highlighter>();

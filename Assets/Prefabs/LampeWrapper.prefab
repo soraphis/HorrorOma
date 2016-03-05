@@ -71,9 +71,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153282}
-  m_LocalRotation: {x: -.529641867, y: -.464061648, z: -.46555075, w: .536086679}
-  m_LocalPosition: {x: -.0915444717, y: .0951511636, z: -.228693724}
-  m_LocalScale: {x: .589918017, y: .589918017, z: .589917779}
+  m_LocalRotation: {x: -0.52964187, y: -0.46406165, z: -0.46555075, w: 0.5360867}
+  m_LocalPosition: {x: -0.09154447, y: 0.09515116, z: -0.22869372}
+  m_LocalScale: {x: 0.589918, y: 0.589918, z: 0.5899178}
   m_Children: []
   m_Father: {fileID: 490850}
   m_RootOrder: 0
@@ -83,9 +83,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167260}
-  m_LocalRotation: {x: -.529641867, y: -.464061648, z: -.46555075, w: .536086679}
-  m_LocalPosition: {x: -.0915444717, y: .0951511636, z: -.228693724}
-  m_LocalScale: {x: .589918017, y: .589918017, z: .589917779}
+  m_LocalRotation: {x: -0.52964187, y: -0.46406165, z: -0.46555075, w: 0.5360867}
+  m_LocalPosition: {x: -0.09154447, y: 0.09515116, z: -0.22869372}
+  m_LocalScale: {x: 0.589918, y: 0.589918, z: 0.5899178}
   m_Children: []
   m_Father: {fileID: 490850}
   m_RootOrder: 1
@@ -96,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 4.12799978, z: 0}
+  m_LocalPosition: {x: -2, y: 4.128, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 410850}
@@ -111,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0410000011, y: -.272000015, z: .103}
+  m_LocalPosition: {x: 0.041, y: -0.272, z: 0.103}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490850}
@@ -134,8 +134,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -158,8 +160,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -187,17 +191,18 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 2
-  m_Color: {r: .752941191, g: .749019623, b: .670588255, a: 1}
-  m_Intensity: 1.20000005
-  m_Range: 6.78988695
+  m_Color: {r: 0.7529412, g: 0.7490196, b: 0.67058825, a: 1}
+  m_Intensity: 2
+  m_Range: 9
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
     m_Strength: 1
-    m_Bias: .0500000007
-    m_NormalBias: .400000006
+    m_Bias: 0
+    m_NormalBias: 0.4
+    m_NearPlane: 0.1
   m_Cookie: {fileID: 0}
   m_DrawHalo: 1
   m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
@@ -206,7 +211,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 4
-  m_BounceIntensity: .879999995
+  m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
@@ -231,7 +236,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Intensity
-      value: 2.21000004
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.a
@@ -257,6 +262,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_BounceIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Shadows.m_Bias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Range
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -30,23 +30,36 @@ public class Highlighter : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-	}
+        /*if (highlighted) {
+            Camera.main.GetComponent<HighlightObjects>().addToHighlight(this.gameObject);
+        } else {
+            Camera.main.GetComponent<HighlightObjects>().removeToHighlight(this.gameObject);
+            //this.rend.material.shader = defaultShader;
+        }*/
+    }
 
     public void HighlightToggle(bool b) {
         highlighted = b;
-        if (buffer != null) Camera.main.RemoveCommandBuffer(CameraEvent.AfterFinalPass, buffer);
         if (highlighted) {
-            this.rend.material.shader = outlineShader;
-            this.rend.material.SetFloat("_Outline", outlineSize);
-            this.rend.material.SetColor("_OutlineColor", outlineColor);
-            buffer = new CommandBuffer();
-            buffer.DrawRenderer(rend, rend.material, 0, 5);
-
-            Camera.main.AddCommandBuffer(CameraEvent.AfterFinalPass, buffer);
+            print("highlight!");
+            Camera.main.GetComponent<HighlightObjects>().addToHighlight(this.gameObject);
         } else {
-            this.rend.material.shader = defaultShader;
+            Camera.main.GetComponent<HighlightObjects>().removeToHighlight(this.gameObject);
         }
+        // if (buffer != null) Camera.main.RemoveCommandBuffer(CameraEvent.AfterFinalPass, buffer);
+        /*
+                if (highlighted) {
+                    this.rend.material.shader = outlineShader;
+                    this.rend.material.SetFloat("_Outline", outlineSize);
+                    this.rend.material.SetColor("_OutlineColor", outlineColor);
+                    buffer = new CommandBuffer();
+                    buffer.DrawRenderer(rend, rend.material, 0, 5);
+
+                    Camera.main.AddCommandBuffer(CameraEvent.AfterFinalPass, buffer);
+                } else {
+                    this.rend.material.shader = defaultShader;
+                }
+        */
     }
 
     public void HighlightToggle() {
