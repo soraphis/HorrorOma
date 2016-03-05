@@ -12,7 +12,12 @@ public class EditorTools : Editor{
 		}
 	}
 
-	[MenuItem("Custom/Orient On Ground")]
+    [MenuItem("Custom/RemoveHideFlags")]
+    static void RemoveHideFlags() {
+       Selection.activeObject.hideFlags = HideFlags.None;
+    }
+
+    [MenuItem("Custom/Orient On Ground")]
 	static void OrientOnGround(){
 		Transform t = Selection.activeGameObject.transform;
 

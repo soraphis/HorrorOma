@@ -6,8 +6,8 @@ using System.Collections;
 
 public class Fuse : MonoBehaviour {
 
-    private Color offColor = new Color(100,0,0);
-    private Color onColor = new Color(0, 100, 0);
+    private Color offColor = new Color(200,0,0);
+    private Color onColor = new Color(0, 200, 0);
     private bool _powered = false;
 	public bool PowerAble = true;
     public bool IsOnAtStart;
