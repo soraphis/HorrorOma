@@ -4,34 +4,27 @@ using System.Collections;
 
 public class IntroScript : MonoBehaviour {
 
-	[SerializeField] private float delay = 5f;
-	[SerializeField] private float fadeTime = 0.6f;
-	[SerializeField] private bool secretFlag = false;
+    [SerializeField] private Image[] images;
+    [SerializeField] private float[] times;
 
-	private Image image;
+    private int current = 0;
 
-	// Use this for initialization
-	void Start () {
-		image = GetComponent<Image>();
-		StartCoroutine(FadeIn());
-	}
-
-	private IEnumerator FadeIn(){
-		yield return new WaitForSeconds(delay);
-		for(float f = 0f; f <= 1; f += 0.05f){
-            Fade(f);
-            yield return new WaitForSeconds(0.05f/fadeTime);
+    void Update() {
+        if (current >= times.Length) {
+            LevelLoader.instance.ConditionToLoad = true;
+            this.enabled = false;
+            return;
         }
-        Fade(1f);
-		if(secretFlag){
-			yield return new WaitForSeconds(1f);
-			LevelLoader.instance.ConditionToLoad = true;
-		}
+        times[current] -= Time.deltaTime;
+        if (times[current] < -1) {
+            current++;
+            return;
+        }
+        if (times[current] < 0) {
+            Color c = images[current].color;
+            c.a = -times[current];
+            images[current].color = c;
+        }
     }
 
-	private void Fade(float f){
-        Color c = image.color;
-        c.a = f;
-		image.color = c;
-    }
 }

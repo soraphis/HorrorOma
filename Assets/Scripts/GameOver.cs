@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityStandardAssets.Water;
 
@@ -57,7 +58,7 @@ namespace Assets.Scripts
 
         void LoadAgain()
         {
-            Application.LoadLevel(0);
+            SceneManager.LoadScene(0);
         }
 
         void UISceneLoaded()

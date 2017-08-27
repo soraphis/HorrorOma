@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -24,7 +25,8 @@ public class Player : MonoBehaviour {
 	[SerializeField] private GameObject boxSpots;
 
 	private IEnumerator Load(){
-        AsyncOperation levelLoader = Application.LoadLevelAdditiveAsync("UIScene");
+        // AsyncOperation levelLoader = Application.LoadLevelAdditiveAsync("UIScene");
+        AsyncOperation levelLoader = SceneManager.LoadSceneAsync("UIScene", LoadSceneMode.Additive);
 		yield return levelLoader;
         if(onLevelLoad != null) onLevelLoad();
     }

@@ -1,6 +1,7 @@
 using System;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EditorTools : Editor{
 
@@ -43,7 +44,8 @@ public class EditorTools : Editor{
             return;
         }
         Debug.Log("Opening " + scenepath + " additively");
-        EditorApplication.OpenSceneAdditive(scenepath);
+        //EditorApplication.OpenSceneAdditive(scenepath);
+        SceneManager.LoadScene(scenepath, LoadSceneMode.Additive);
     }
 
     [MenuItem("Custom/ProBuilder/Actions/Force Refresh Objects")]
